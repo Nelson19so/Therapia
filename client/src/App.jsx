@@ -8,12 +8,12 @@ function App() {
     <>
       {/* Header */}
       <header className="flex justify-center">
-        <div className="max-w-[1440px] w-full flex justify-center pr-[101px]">
-          <div className="w-full max-w-[1238px] pl-[114px] pr-[10px] py-[15px] flex items-center justify-between">
+        <div className="max-w-[1440px] w-full flex justify-center xl:pr-[101px] pr-[0px]">
+          <div className="w-full xl:max-w-[1238px] lg:max-w-[994px] md:max-w-[768px] max-w-[640px] xl:pl-[114px] lg:pl-[25px] md:pl-[43px] pl-[19px] pr-[10px] py-[15px] flex items-center justify-between min-h-[60px]">
             <span className="text-[13px]/[1.0] text-black font-bold">
               Therapia
             </span>
-            <nav>
+            <nav className="lg:block hidden">
               <ul className="flex gap-x-[50px] text-[13px]/[1.0] text-black font-semibold">
                 <li>About us</li>
                 <li>Features</li>
@@ -36,7 +36,7 @@ function App() {
                 </li>
               </ul>
             </nav>
-            <div className="flex gap-x-[19px]">
+            <div className="lg:flex gap-x-[19px] hidden">
               <button className="rounded-[6px] bg-[#031A0A] text-white min-w-[121px] h-[30px] flex items-center justify-center text-[12px]/[18px] font-semibold">
                 Create Account
               </button>
@@ -50,14 +50,14 @@ function App() {
 
       <main>
         {/* Hero Section */}
-        <section className="flex justify-center">
-          <div className="max-w-[1440px] w-full flex justify-center pr-[97px]">
-            <div className="w-full max-w-[1246px] pl-[120px] py-[23px] flex items-center justify-between">
-              <div className="flex flex-col gap-y-[18px]">
-                <h2 className="max-w-[372px] text-[38px]/[45px] font-bold text-[#031A0A]">
+        <section className="flex justify-center overflow-hidden">
+          <div className="max-w-[1440px] w-full flex justify-center xl:pr-[97px] lg:pr-[22px] md:pr-[25px] pr-[10px]">
+            <div className="w-full xl:max-w-[1246px] lg:max-w-[1002px] md:max-w-[743px] max-w-[630px] xl:pl-[120px] md:pl-[45px] sm:pl-[20px] pl-[10px] lg:py-[23px] py-[0px] sm:pt-[0px] pt-[70px] flex items-center justify-between sm:flex-row flex-col">
+              <div className="flex flex-col gap-y-[18px] sm:items-start items-center">
+                <h2 className="sm:max-w-[372px] max-w-[262px] lg:text-[38px]/[45px] md:text-[29px]/[35px] text-[27px]/[33px] font-bold text-[#031A0A]">
                   Your Mind Matters. We're Here to Help.
                 </h2>
-                <p className="max-w-[337px] text-[13px]/[21px] text-[#4B5563]">
+                <p className="lg:max-w-[337px] md:max-w-[290px] sm:max-w-[289px] max-w-[280px] text-[13px]/[21px] text-[#4B5563] sm:text-start text-center">
                   Therapia connects you with licensed therapists and
                   personalized mental wellness tools anytime, anywhere.
                 </p>
@@ -70,14 +70,14 @@ function App() {
                   </button>
                 </div>
               </div>
-              <div className="bg-[url(/images/hero-image-landing-page.png)] bg-contain w-[483px] h-[322px] bg-no-repeat relative">
+              <div className="bg-[url(/images/hero-image-landing-page.webp)] bg-contain lg:w-[483px] sm:w-[373px] w-[300px] h-[322px] bg-no-repeat relative bg-center">
                 <svg
                   width={126}
                   height={86}
                   viewBox="0 0 126 86"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute top-[-23px] left-[-35px] z-[-1]"
+                  className="absolute top-[-23px] left-[-35px] z-[-1] lg:block hidden"
                 >
                   <path
                     opacity={0.5}
@@ -91,7 +91,7 @@ function App() {
                   viewBox="0 0 89 39"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute bottom-[-23px] right-[-64px] z-[-1]"
+                  className="absolute lg:bottom-[-23px] bottom-[0px] right-[-64px] z-[-1] lg:block hidden"
                 >
                   <path
                     opacity={0.5}
@@ -114,7 +114,7 @@ function App() {
                 viewBox="0 0 156 135"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-[0px] left-[0px] z-[-1]"
+                className="absolute top-[0px] left-[0px] z-[-1] lg:block hidden"
               >
                 <path
                   opacity={0.5}
@@ -128,7 +128,7 @@ function App() {
                 viewBox="0 0 202 118"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="absolute bottom-[0px] right-[0px] z-[-1]"
+                className="absolute bottom-[0px] right-[0px] z-[-1] lg:block hidden"
               >
                 <path
                   opacity={0.5}
@@ -137,15 +137,15 @@ function App() {
                 />
               </svg>
               <div className="flex flex-col items-center gap-y-[12px]">
-                <h4 className="text-[22px]/[30px] font-bold text-[#031A0A]">
+                <h4 className="text-[22px]/[30px] font-bold text-[#031A0A] sm:max-w-full max-w-[262px] text-center">
                   Features Designed for Your Well-being
                 </h4>
-                <p className="text-[12px]/[21px] max-w-[453px] text-center text-[#4B5563]">
+                <p className="text-[12px]/[21px] sm:max-w-[453px] max-w-[300px] text-center text-[#4B5563]">
                   Therapia offers comprehensive tools to support your mental
                   health journey, wherever you are.
                 </p>
               </div>
-              <div className="py-[24px] gap-[38px] grid grid-cols-[313px_313px_313px] justify-center">
+              <div className="py-[24px] gap-[38px] grid xl:grid-cols-[313px_313px_313px] lg:grid-cols-[288px_288px_288px] md:grid-cols-[325px_325px] sm:grid-cols-[286px_286px] grid-cols-[300px] justify-center">
                 {/* Feature Card Components */}
                 <FeatureCard
                   title="Virtual Therapy Sessions"
@@ -184,16 +184,16 @@ function App() {
 
         {/* How Therapia works Section*/}
         <section className="flex justify-center">
-          <div className="max-w-[1440px] w-full pt-[22px] flex flex-col gap-y-[44px]">
+          <div className="max-w-[1440px] w-full sm:pt-[22px] pt-[37px] flex flex-col gap-y-[44px]">
             <div className="flex flex-col items-center">
               <h4 className="text-[22px]/[30px] font-bold text-[#031A0A]">
                 How Therapia works
               </h4>
-              <p className="text-[13px]/[21px] font-[Inter] text-[#4B5563]">
+              <p className="text-[13px]/[21px] font-[Inter] text-[#4B5563] sm:max-w-full max-w-[300px] text-center sm:mt-[0px] mt-[12px]">
                 Your journey to better mental wellness is just a few steps away.
               </p>
             </div>
-            <div className="grid grid-cols-[178px_178px_178px_178px_178px] justify-center gap-[24px]">
+            <div className="grid xl:grid-cols-[178px_178px_178px_178px_178px] lg:grid-cols-[163px_163px_163px_163px_163px] md:grid-cols-[206px_206px_206px] sm:grid-cols-[180px_180px_180px] grid-cols-[200px] justify-center gap-[24px]">
               {/* Process Card Components */}
               <ProcessCard
                 title="Sign up"
@@ -226,18 +226,18 @@ function App() {
 
         {/* Stories from Our Community Section */}
         <section className="flex justify-center">
-          <div className="max-w-[1440px] w-full pt-[22px] pb-[28px] flex flex-col gap-y-[24px]">
+          <div className="max-w-[1440px] w-full sm:pt-[22px] pt-[61px] pb-[28px] flex flex-col gap-y-[24px]">
             <div className="flex flex-col items-center">
-              <h4 className="text-[22px]/[30px] font-bold text-[#031A0A]">
+              <h4 className="text-[22px]/[30px] font-bold text-[#031A0A] sm:max-w-full max-w-[262px] text-center">
                 Stories from Our Community
               </h4>
-              <p className="text-[13px]/[21px] font-[Inter] text-[#4B5563]">
+              <p className="text-[13px]/[21px] font-[Inter] text-[#4B5563] sm:max-w-full max-w-[300px] text-center sm:mt-[0px] mt-[12px]">
                 Hear from people whose lives have been transformed through
                 Therapia.
               </p>
             </div>
 
-            <div className="grid grid-cols-[229px_229px_229px_229px] justify-center gap-[24px]">
+            <div className="grid xl:grid-cols-[229px_229px_229px_229px] lg:grid-cols-[210px_210px_210px_210px] md:grid-cols-[322px_322px] sm:grid-cols-[283px_283px] grid-cols-[300px] justify-center gap-[24px]">
               {/* Testimonial Card Components */}
               <TestimonialCard
                 name="Sarah L."
@@ -266,7 +266,7 @@ function App() {
         {/* Are You a Licensed Mental Health Professional? Section */}
         <section className="flex justify-center">
           <div className="max-w-[1440px] w-full pt-[22px] flex justify-center">
-            <div className="max-w-[988px] w-full pt-[22px] flex flex-col gap-y-[12px] py-[35px] font-[Inter]">
+            <div className="xl:max-w-[988px] lg:max-w-[914px] md:max-w-[668px] sm:max-w-[590px] max-w-[361px] w-full pt-[22px] flex flex-col gap-y-[12px] py-[35px] sm:px-[0px] px-[20px] font-[Inter]">
               <h4 className="text-[22px]/[30px] text-[#031A0A] font-bold max-w-[361px]">
                 Are You a Licensed Mental Health Professional?
               </h4>
@@ -352,16 +352,16 @@ function App() {
         <section className="flex justify-center bg-[#8FAA0D]">
           <div className="max-w-[1440px] w-full py-[48px] flex justify-center">
             <div className="flex flex-col items-center gap-y-[12px]">
-              <h4 className="text-[22px]/[30px] font-bold text-white">
+              <h4 className="text-[22px]/[30px] font-bold text-white sm:max-w-full max-w-[262px] text-center">
                 Get Mental Wellness Tips Straight to Your Inbox
               </h4>
-              <p className="text-[13px]/[21px] max-w-[483px] text-center text-[#F5F3FF]">
+              <p className="text-[13px]/[21px] sm:max-w-[483px] max-w-[300px] text-center text-[#F5F3FF]">
                 Join our newsletter for expert advice, coping strategies, and
                 the latest in mental health research.
               </p>
               <form
                 action=""
-                className="mt-[10px] flex gap-x-[12px]"
+                className="mt-[10px] flex gap-x-[12px] sm:px-[0px] px-[20px]"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <input
@@ -369,9 +369,9 @@ function App() {
                   name=""
                   id=""
                   placeholder="Your Email Address"
-                  className="text-[12px]/[18px] text-[#031A0A] font-normal font-[Inter] placeholder-[#CCCCCC] bg-white rounded-[4px] min-w-[221px] px-[12px] outline-0"
+                  className="text-[12px]/[18px] text-[#031A0A] font-normal font-[Inter] placeholder-[#CCCCCC] bg-white rounded-[4px] sm:min-w-[221px] w-full px-[12px] outline-0"
                 />
-                <button className="rounded-[4px] bg-[#031A0A] text-white min-w-[103px] w-full h-[36px] flex items-center justify-center text-[12px]/[21px] font-semibold">
+                <button className="rounded-[4px] bg-[#031A0A] text-white min-w-[103px] sm:w-full h-[36px] flex items-center justify-center text-[12px]/[21px] font-semibold">
                   Subscribe
                 </button>
               </form>
@@ -386,18 +386,18 @@ function App() {
       {/* Footer */}
       <footer className="flex justify-center bg-[#031A0A]">
         <div className="max-w-[1440px] w-full py-[97px] flex justify-center">
-          <div className="max-w-[988px] w-full flex flex-col font-[Inter] gap-y-[24px]">
-            <div className="grid grid-cols-[229px_229px_229px_229px] justify-center gap-[24px]">
-              <div className="flex flex-col gap-y-[12px]">
+          <div className="xl:max-w-[988px] lg:max-w-[914px] md:max-w-[668px] sm:max-w-[590px] max-w-[590px] w-full flex flex-col font-[Inter] gap-y-[24px] sm:px-[0px] px-[19px]">
+            <div className="grid xl:grid-cols-[229px_229px_229px_229px] lg:grid-cols-[210px_210px_210px_210px] md:grid-cols-[173px_141px_141px_141px] sm:grid-cols-[130px_130px_130px] grid-cols-[126px_126px] md:justify-center justify-start gap-[24px]">
+              <div className="flex flex-col gap-y-[12px] md:col-span-[1] col-span-[2]">
                 <h6 className="text-[13px]/[21px] font-bold text-white">
                   Therapia
                 </h6>
-                <p className="text-[11px]/[18px] text-[#9CA3AF] max-w-[214px]">
+                <p className="text-[11px]/[18px] text-[#9CA3AF] md:max-w-[214px] max-w-[227px]">
                   Your mental wellness companion, available whenever and
                   wherever you need support.
                 </p>
               </div>
-              <div className="flex flex-col gap-y-[12px]">
+              <div className="flex flex-col gap-y-[12px] md:row-[auto] row-[2]">
                 <h6 className="text-[13px]/[18px] font-semibold text-white">
                   Company
                 </h6>
@@ -408,7 +408,7 @@ function App() {
                   <a href="">Press</a>
                 </div>
               </div>
-              <div className="flex flex-col gap-y-[12px]">
+              <div className="flex flex-col gap-y-[12px] md:row-[auto] sm:row-[2] row-[3]">
                 <h6 className="text-[13px]/[18px] font-semibold text-white">
                   Resources
                 </h6>
@@ -419,7 +419,7 @@ function App() {
                   <a href="">FAQ</a>
                 </div>
               </div>
-              <div className="flex flex-col gap-y-[12px]">
+              <div className="flex flex-col gap-y-[12px] md:row-[auto] row-[2]">
                 <h6 className="text-[13px]/[18px] font-semibold text-white">
                   Legal
                 </h6>
