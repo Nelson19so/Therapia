@@ -1,6 +1,6 @@
 export default function ProcessCard({ title, text, svgCode }) {
   return (
-    <div className="flex flex-col items-center gap-y-[6px]">
+    <div className="flex flex-col items-center gap-y-[6px] md:min-h-auto sm:min-h-[143px]">
       <div className="w-[50px] h-[50px] flex items-center justify-center rounded-[50%] outline-[1px] outline-[#DBEAFE] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)] ">
         {svgCode === 1 ? (
           <svg
