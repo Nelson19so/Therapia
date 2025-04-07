@@ -1,16 +1,10 @@
-import FeatureCard from "./components/FeatureCard";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import ProcessCard from "./components/ProcessCard";
-import TestimonialCard from "./components/TestimonialCard";
+import FeatureCard from "../components/FeatureCard";
+import ProcessCard from "../components/ProcessCard";
+import TestimonialCard from "../components/TestimonialCard";
 
-function App() {
+export default function Landing() {
   return (
     <>
-      {/* Header */}
-      <Header />
-      <div className="h-[60px] bg-white"></div>
-
       <main>
         {/* Hero Section */}
         <section className="flex justify-center overflow-hidden">
@@ -345,11 +339,6 @@ function App() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <Footer />
     </>
   );
 }
-
-export default App;
