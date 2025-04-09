@@ -38,3 +38,4 @@ Therapia is a mobile, desktop, tablet therapy webapp designed to provide accessi
 - Wrote a function to remove confirm password because we don't need it to be stored in the database after a user is created
 - made the id field read_only for security reasons
 - added validation for password and also to check that the user as accepted the tearms and condition
+- removed the CustomUser import since we no longer need it and the reason for this is because we are using get_user_model which we've already assigned in our settings.py file to our CustomUser 
