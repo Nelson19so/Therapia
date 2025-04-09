@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.password_validation import validate_password
-from .models import CustomUser
+from .models import CustomUser, OTP
+from django.core.exceptions import ValidationError
 
 User = get_user_model()
 
@@ -77,3 +78,13 @@ class UserLogInSerialier(serializers.Serializer):
         
         attrs['user'] = user
         return attrs
+
+# OTP request
+class RequestOTPSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+    def validate_email(self, value):
+        """Ensure the user exists."""
+        if not User.objects.filter(email=value).exists():
+            raise ValidationError("User with this email does not exist.")
+        return value

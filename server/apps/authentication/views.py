@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model, login, logout
 from rest_framework import status, generics
 from rest_framework.response import Response
-from .models import CustomUser
-from .serializers import UserCreateSerializer, UserProfileSerializer, UserLogInSerialier
+from .models import CustomUser, OTP
+from .serializers import UserCreateSerializer, UserProfileSerializer, UserLogInSerialier, RequestOTPSerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
 
@@ -35,10 +35,14 @@ class UserSignUpListCreateApiView(APIView):
 class UserProfileView(generics.RetrieveUpdateAPIView):
   serializer_class = UserCreateSerializer
   queryset = User.objects.all()
-  permission_classes = [AllowAny]
+  permission_classes = [IsAuthenticated]
   lookup_field = 'pk'
 
+  def get_object(self):
+    return self.request.user  # This ensures that only the logged-in user can view/update their profile
 
+
+# delete user account
 class UserDeleteView(generics.DestroyAPIView):
   queryset = User.objects.all()
   permission_classes = [IsAuthenticated]  # Ensure the user is authenticated
@@ -90,4 +94,39 @@ class UserLogoutView(APIView):
       'message': 'Logout successful!'
     }, status=status.HTTP_200_OK)
 
+
     
+"""""
+request an OTP fr password reset
+"""""
+class RequestOTPView(generics.CreateAPIView):
+  serializer_class = RequestOTPSerializer
+  permission_classes = [AllowAny]
+
+  def create(self, request, *args, **kwargs):
+    """Handle OTP request via email"""
+    serializer = self.get_serializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+
+    email = serializer.validated_data['email']
+    
+    try:
+      user = User.objects.get(email=email)
+    except User.DoesNotExist:
+      return Response({'error': 'User with this email does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+    OTP.objects.filter(user=user, is_verified=False).delete()
+
+    # Create OTP and associate it with the user
+    otp = OTP.objects.create(user=user)
+
+    # Send OTP to the user's email
+    send_mail(
+      'Password Reset OTP',
+      f'Your OTP for resetting password is {otp.otp}',
+      settings.DEFAULT_FROM_EMAIL,
+      [user.email],
+      fail_silently=False,
+    )
+
+    return Response({'message': 'OTP sent to your email'}, status=status.HTTP_200_OK)

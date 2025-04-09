@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+import random
+import string
+
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -37,3 +40,19 @@ class CustomUser(AbstractUser):
     
     def __str__(self):
         return self.email
+    
+
+class OTP(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    otp = models.CharField(max_length=6)  # OTP of length 6
+    created_at = models.DateTimeField(auto_now_add=True)  # Time when OTP was generated
+    is_verified = models.BooleanField(default=False)  # Whether OTP is used or not
+
+    def generate_otp(self):
+        """Generate a random OTP consisting of digits."""
+        return ''.join(random.choices(string.digits, k=6))  # Random 6-digit OTP
+
+    def save(self, *args, **kwargs):
+        if not self.otp:
+            self.otp = self.generate_otp()  # Automatically generate OTP
+        super().save(*args, **kwargs)
