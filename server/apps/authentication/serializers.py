@@ -16,7 +16,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(write_only=True, required=True)
 
     class Meta:
-        model = CustomUser
+        model = User
         fields = [
             'email', 'phone_number', 'first_name', 'last_name',
             'password', 'confirm_password', 'terms_accepted'
@@ -58,7 +58,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data.pop('confirm_password')  # Don't store confirm_password
-        user = CustomUser.objects.create_user(**validated_data)
+        user = User.objects.create_user(**validated_data)
         return user
 
         # This is to remove the field confirm password because we don't need it to be stored in the database
