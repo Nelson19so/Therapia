@@ -11,18 +11,18 @@ export default function Landing() {
           <div className="max-w-[1440px] w-full flex justify-center xl:pr-[97px] lg:pr-[22px] md:pr-[25px] pr-[10px]">
             <div className="w-full xl:max-w-[1246px] lg:max-w-[1002px] md:max-w-[743px] max-w-[630px] xl:pl-[120px] md:pl-[45px] sm:pl-[20px] pl-[10px] lg:py-[23px] py-[0px] sm:pt-[0px] pt-[70px] flex items-center justify-between sm:flex-row flex-col">
               <div className="flex flex-col gap-y-[18px] sm:items-start items-center">
-                <h2 className="sm:max-w-[372px] max-w-[262px] lg:text-[38px]/[45px] md:text-[29px]/[35px] text-[27px]/[33px] font-bold text-[#031A0A]">
+                <h2 className="sm:max-w-[372px] max-w-[262px] lg:text-[38px]/[45px] md:text-[29px]/[35px] text-[27px]/[33px] font-bold text-[var(--secondary)]">
                   Your Mind Matters. We're Here to Help.
                 </h2>
-                <p className="lg:max-w-[337px] md:max-w-[290px] sm:max-w-[289px] max-w-[280px] text-[13px]/[21px] text-[#4B5563] sm:text-start text-center">
+                <p className="lg:max-w-[337px] md:max-w-[290px] sm:max-w-[289px] max-w-[280px] text-[13px]/[21px] text-[var(--text-primary)] sm:text-start text-center">
                   Therapia connects you with licensed therapists and
                   personalized mental wellness tools anytime, anywhere.
                 </p>
                 <div className="mt-[6px] flex gap-x-[12px]">
-                  <button className="rounded-[4px] bg-[#031A0A] text-white min-w-[95px] h-[33px] flex items-center justify-center text-[12px]/[18px] font-semibold">
+                  <button className="rounded-[4px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[95px] h-[33px] flex items-center justify-center text-[12px]/[18px] font-semibold">
                     Get Started
                   </button>
-                  <button className="rounded-[4px] bg-[#EDE9FE] text-[#031A0A] px-[13px] h-[33px] flex items-center text-[12px]/[18px] font-medium">
+                  <button className="rounded-[4px] bg-[var(--accent-base)] text-[var(--secondary)] px-[13px] h-[33px] flex items-center text-[12px]/[18px] font-medium">
                     Explore Features
                   </button>
                 </div>
@@ -39,7 +39,7 @@ export default function Landing() {
                   <path
                     opacity={0.5}
                     d="M126 23C126 57.7939 97.7939 86 63 86C28.2061 86 0 57.7939 0 23C0 -11.7939 28.2061 -40 63 -40C97.7939 -40 126 -11.7939 126 23ZM20.8872 23C20.8872 46.2583 39.7417 65.1128 63 65.1128C86.2583 65.1128 105.113 46.2583 105.113 23C105.113 -0.258274 86.2583 -19.1128 63 -19.1128C39.7417 -19.1128 20.8872 -0.258274 20.8872 23Z"
-                    fill="#8FAA0D"
+                    fill="var(--primary)"
                   />
                 </svg>
                 <svg
@@ -53,7 +53,7 @@ export default function Landing() {
                   <path
                     opacity={0.5}
                     d="M89 44.5C89 69.0767 69.0767 89 44.5 89C19.9233 89 0 69.0767 0 44.5C0 19.9233 19.9233 0 44.5 0C69.0767 0 89 19.9233 89 44.5ZM18.6317 44.5C18.6317 58.7867 30.2133 70.3683 44.5 70.3683C58.7867 70.3683 70.3683 58.7867 70.3683 44.5C70.3683 30.2133 58.7867 18.6317 44.5 18.6317C30.2133 18.6317 18.6317 30.2133 18.6317 44.5Z"
-                    fill="#8FAA0D"
+                    fill="var(--primary)"
                   />
                 </svg>
               </div>
@@ -76,7 +76,7 @@ export default function Landing() {
                 <path
                   opacity={0.5}
                   d="M156 31.0001C156 88.4377 109.438 135 52 135C-5.43766 135 -52 88.4377 -52 31.0001C-52 -26.4376 -5.43766 -72.9999 52 -72.9999C109.438 -72.9999 156 -26.4376 156 31.0001ZM-17.5196 31.0001C-17.5196 69.3947 13.6053 100.52 52 100.52C90.3946 100.52 121.52 69.3947 121.52 31.0001C121.52 -7.39455 90.3946 -38.5195 52 -38.5195C13.6053 -38.5195 -17.5196 -7.39455 -17.5196 31.0001Z"
-                  fill="#8FAA0D"
+                  fill="var(--primary)"
                 />
               </svg>
               <svg
@@ -90,14 +90,14 @@ export default function Landing() {
                 <path
                   opacity={0.5}
                   d="M208 104.92C208 162.358 161.438 208.92 104 208.92C46.5624 208.92 0 162.358 0 104.92C0 47.4826 46.5624 0.920166 104 0.920166C161.438 0.920166 208 47.4826 208 104.92ZM34.4804 104.92C34.4804 143.315 65.6054 174.44 104 174.44C142.395 174.44 173.52 143.315 173.52 104.92C173.52 66.5256 142.395 35.4006 104 35.4006C65.6054 35.4006 34.4804 66.5256 34.4804 104.92Z"
-                  fill="#8FAA0D"
+                  fill="var(--primary)"
                 />
               </svg>
               <div className="flex flex-col items-center gap-y-[12px]">
-                <h4 className="text-[22px]/[30px] font-bold text-[#031A0A] sm:max-w-full max-w-[262px] text-center">
+                <h4 className="text-[22px]/[30px] font-bold text-[var(--secondary)] sm:max-w-full max-w-[262px] text-center">
                   Features Designed for Your Well-being
                 </h4>
-                <p className="text-[12px]/[21px] sm:max-w-[453px] max-w-[300px] text-center text-[#4B5563]">
+                <p className="text-[12px]/[21px] sm:max-w-[453px] max-w-[300px] text-center text-[var(--text-primary)]">
                   Therapia offers comprehensive tools to support your mental
                   health journey, wherever you are.
                 </p>
@@ -143,10 +143,10 @@ export default function Landing() {
         <section className="flex justify-center">
           <div className="max-w-[1440px] w-full sm:pt-[22px] pt-[37px] flex flex-col gap-y-[44px]">
             <div className="flex flex-col items-center">
-              <h4 className="text-[22px]/[30px] font-bold text-[#031A0A]">
+              <h4 className="text-[22px]/[30px] font-bold text-[var(--secondary)]">
                 How Therapia works
               </h4>
-              <p className="text-[13px]/[21px] font-[Inter] text-[#4B5563] sm:max-w-full max-w-[300px] text-center sm:mt-[0px] mt-[12px]">
+              <p className="text-[13px]/[21px] font-[Inter] text-[var(--text-primary)] sm:max-w-full max-w-[300px] text-center sm:mt-[0px] mt-[12px]">
                 Your journey to better mental wellness is just a few steps away.
               </p>
             </div>
@@ -185,10 +185,10 @@ export default function Landing() {
         <section className="flex justify-center">
           <div className="max-w-[1440px] w-full sm:pt-[22px] pt-[61px] pb-[28px] flex flex-col gap-y-[24px]">
             <div className="flex flex-col items-center">
-              <h4 className="text-[22px]/[30px] font-bold text-[#031A0A] sm:max-w-full max-w-[262px] text-center">
+              <h4 className="text-[22px]/[30px] font-bold text-[var(--secondary)] sm:max-w-full max-w-[262px] text-center">
                 Stories from Our Community
               </h4>
-              <p className="text-[13px]/[21px] font-[Inter] text-[#4B5563] sm:max-w-full max-w-[300px] text-center sm:mt-[0px] mt-[12px]">
+              <p className="text-[13px]/[21px] font-[Inter] text-[var(--text-primary)] sm:max-w-full max-w-[300px] text-center sm:mt-[0px] mt-[12px]">
                 Hear from people whose lives have been transformed through
                 Therapia.
               </p>
@@ -224,14 +224,14 @@ export default function Landing() {
         <section className="flex justify-center">
           <div className="max-w-[1440px] w-full pt-[22px] flex justify-center">
             <div className="xl:max-w-[988px] lg:max-w-[914px] md:max-w-[668px] sm:max-w-[590px] max-w-[361px] w-full pt-[22px] flex flex-col gap-y-[12px] py-[35px] sm:px-[0px] px-[20px] font-[Inter]">
-              <h4 className="text-[22px]/[30px] text-[#031A0A] font-bold max-w-[361px]">
+              <h4 className="text-[22px]/[30px] text-[var(--secondary)] font-bold max-w-[361px]">
                 Are You a Licensed Mental Health Professional?
               </h4>
-              <p className="text-[13px]/[21px] text-[#4B5563] max-w-[347px]">
+              <p className="text-[13px]/[21px] text-[var(--text-primary)] max-w-[347px]">
                 Join our network of therapists and counselors making mental
                 healthcare accessible to those who need it most.
               </p>
-              <div className="mt-[6px] text-[11px]/[18px] text-[#1F2937] flex flex-col gap-y-[6px]">
+              <div className="mt-[6px] text-[11px]/[18px] text-[var(--text-secondary)] flex flex-col gap-y-[6px]">
                 <div className="flex items-center gap-x-[6px]">
                   <svg
                     width={18}
@@ -242,11 +242,11 @@ export default function Landing() {
                   >
                     <path
                       d="M0 9.51917C0 4.55723 4.02244 0.53479 8.98438 0.53479C13.9463 0.53479 17.9688 4.55723 17.9688 9.51917C17.9688 14.4811 13.9463 18.5035 8.98438 18.5035C4.02244 18.5035 0 14.4811 0 9.51917Z"
-                      fill="#8FAA0D"
+                      fill="var(--primary)"
                     />
                     <path
                       d="M5.4854 10.019L7.48482 12.0185L12.4834 7.0199"
-                      stroke="white"
+                      stroke="var(--text-light)"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -263,11 +263,11 @@ export default function Landing() {
                   >
                     <path
                       d="M0 9.51917C0 4.55723 4.02244 0.53479 8.98438 0.53479C13.9463 0.53479 17.9688 4.55723 17.9688 9.51917C17.9688 14.4811 13.9463 18.5035 8.98438 18.5035C4.02244 18.5035 0 14.4811 0 9.51917Z"
-                      fill="#8FAA0D"
+                      fill="var(--primary)"
                     />
                     <path
                       d="M5.4854 10.019L7.48482 12.0185L12.4834 7.0199"
-                      stroke="white"
+                      stroke="var(--text-light)"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -286,11 +286,11 @@ export default function Landing() {
                   >
                     <path
                       d="M0 9.51917C0 4.55723 4.02244 0.53479 8.98438 0.53479C13.9463 0.53479 17.9688 4.55723 17.9688 9.51917C17.9688 14.4811 13.9463 18.5035 8.98438 18.5035C4.02244 18.5035 0 14.4811 0 9.51917Z"
-                      fill="#8FAA0D"
+                      fill="var(--primary)"
                     />
                     <path
                       d="M5.4854 10.019L7.48482 12.0185L12.4834 7.0199"
-                      stroke="white"
+                      stroke="var(--text-light)"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
@@ -298,7 +298,7 @@ export default function Landing() {
                   <p>Expand your practice and help more clients</p>
                 </div>
               </div>
-              <button className="mt-[12px] rounded-[4px] bg-[#031A0A] text-white max-w-[158px] w-full h-[36px] flex items-center justify-center text-[12px]/[21px] font-semibold">
+              <button className="mt-[12px] rounded-[4px] bg-[var(--secondary)] text-[var(--text-light)] max-w-[158px] w-full h-[36px] flex items-center justify-center text-[12px]/[21px] font-semibold">
                 Join as a Therapist
               </button>
             </div>
@@ -306,13 +306,13 @@ export default function Landing() {
         </section>
 
         {/* Get Mental Wellness Tips Straight to Your Inbox Section */}
-        <section className="flex justify-center bg-[#8FAA0D]">
+        <section className="flex justify-center bg-[var(--primary)]">
           <div className="max-w-[1440px] w-full py-[48px] flex justify-center">
             <div className="flex flex-col items-center gap-y-[12px]">
-              <h4 className="text-[22px]/[30px] font-bold text-white sm:max-w-full max-w-[262px] text-center">
+              <h4 className="text-[22px]/[30px] font-bold text-[var(--text-light)] sm:max-w-full max-w-[262px] text-center">
                 Get Mental Wellness Tips Straight to Your Inbox
               </h4>
-              <p className="text-[13px]/[21px] sm:max-w-[483px] max-w-[300px] text-center text-[#F5F3FF]">
+              <p className="text-[13px]/[21px] sm:max-w-[483px] max-w-[300px] text-center text-[var(--accent-light)]">
                 Join our newsletter for expert advice, coping strategies, and
                 the latest in mental health research.
               </p>
@@ -326,13 +326,13 @@ export default function Landing() {
                   name=""
                   id=""
                   placeholder="Your Email Address"
-                  className="text-[12px]/[18px] text-[#031A0A] font-normal font-[Inter] placeholder-[#CCCCCC] bg-white rounded-[4px] sm:min-w-[221px] w-full px-[12px] outline-0"
+                  className="text-[12px]/[18px] text-[var(--secondary)] font-normal font-[Inter] placeholder-[var(--neutral-base)] bg-[var(--text-light)] rounded-[4px] sm:min-w-[221px] w-full px-[12px] outline-0"
                 />
-                <button className="rounded-[4px] bg-[#031A0A] text-white min-w-[103px] sm:w-full h-[36px] flex items-center justify-center text-[12px]/[21px] font-semibold">
+                <button className="rounded-[4px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[103px] sm:w-full h-[36px] flex items-center justify-center text-[12px]/[21px] font-semibold">
                   Subscribe
                 </button>
               </form>
-              <span className="text-[10px]/[15px] text-[#F5F3FF] mt-[1px]">
+              <span className="text-[10px]/[15px] text-[var(--accent-light)] mt-[1px]">
                 We respect your privacy. Unsubscribe at any time.
               </span>
             </div>
