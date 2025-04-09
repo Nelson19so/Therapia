@@ -187,18 +187,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static/'
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static/'
+]
 
 # Always define STATIC_ROOT for production deployment
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # This only applies in production mode (DEBUG=False)
-# if not DEBUG:
-#     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+if not DEBUG:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 EMAIL_FILE_PATH = '/tmp/django-emails'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
