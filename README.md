@@ -31,3 +31,10 @@ Therapia is a mobile, desktop, tablet therapy webapp designed to provide accessi
 - made the defualt login to use email instead of the defualt from django which uses username
 - made phone number to be required: This is usefull when we decide to use otp so that we can force the user to include their user name at point of signup
 - added the option for user to choose to select to accept terms and condition which would be made required by the frontend team
+
+## User serializer created
+- created the serializers for user signup
+- <strong>Please note</strong> the user model is called CustomUser in our models.py 
+- Wrote a function to remove confirm password because we don't need it to be stored in the database after a user is created
+- made the id field read_only for security reasons
+- added validation for password and also to check that the user as accepted the tearms and condition
