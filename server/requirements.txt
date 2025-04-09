@@ -1,0 +1,14 @@
+Django>=5.0.3                   # Main web framework
+djangorestframework>=3.15.1    # Django REST Framework for building APIs
+django-allauth>=0.59.0         # User authentication (login, signup, social auth)
+dj-rest-auth>=5.0.0            # API endpoints for auth (built on allauth + DRF)
+django-cors-headers>=4.3.1     # Handles CORS for frontend-backend communication
+Pillow>=10.3.0                  # Image handling (e.g. profile pictures)
+psycopg2-binary>=2.9.9         # PostgreSQL database adapter
+python-decouple>=3.8           # Manage environment variables from a .env file
+whitenoise>=6.6.0              # For serving static files in production
+python-dotenv>=1.0.1           # Loads environment variables from .env file
+
+# Optional extras
+drf-yasg>=1.21.7               # API documentation with Swagger UI (optional)
+django-environ>=0.11.2         # Alternative to decouple for env config (optional)
