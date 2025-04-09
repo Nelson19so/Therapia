@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',# REST API registration using allauth
     'corsheaders',              # CORS handling
 
-    # Your apps
+    # Custom apps
+    'authentication',
 ]
 
 MIDDLEWARE = [
