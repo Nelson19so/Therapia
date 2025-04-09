@@ -26,3 +26,8 @@ Therapia is a mobile, desktop, tablet therapy webapp designed to provide accessi
   "apps.< your-app-name >"
   ]"
   <installed apps>
+
+## User models created 
+- made the defualt login to use email instead of the defualt from django which uses username
+- made phone number to be required: This is usefull when we decide to use otp so that we can force the user to include their user name at point of signup
+- added the option for user to choose to select to accept terms and condition which would be made required by the frontend team
