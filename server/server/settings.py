@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'corsheaders',              # CORS handling
 
     # Custom apps
-    'authentication',
+    "apps.authentication"
 ]
 
 MIDDLEWARE = [
