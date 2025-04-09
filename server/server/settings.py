@@ -207,3 +207,27 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+'''
+This are the changes that have been made(Timothy)
+'''
+# Site ID is required for allauth
+SITE_ID = 1
+
+AUTH_USER_MODEL = 'authentication.CustomUser'
+
+# Add REST Framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+
+
+# For development, you might want to allow all origins
+CORS_ALLOW_ALL_ORIGINS = DEBUG # For production, this will be set to False which would mean DEBUG is set to False
