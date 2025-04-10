@@ -614,8 +614,8 @@ export default function ScheduleSession() {
 
         {/* Connect with Your Ideal Therapist Instantly Section */}
         <section className="flex justify-center bg-[var(--primary)]">
-          <div className="relative max-w-[1700px] w-full flex justify-center">
-            <div className="max-w-[1591px] w-full flex justify-center z-1">
+          <div className="relative max-w-[1700px] w-full flex justify-center z-[0]">
+            <div className="max-w-[1591px] w-full flex justify-center">
               <div className="max-w-[1301px] w-full flex flex-col gap-y-[41px] items-center pt-[34px] pb-[94px]">
                 <div className="max-w-[1195px] w-full flex">
                   <div className="max-w-[1137px] w-full">
@@ -666,7 +666,7 @@ export default function ScheduleSession() {
               viewBox="0 0 173 220"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-[0px] left-[0px] z-0"
+              className="absolute top-[0px] left-[0px] z-[-1]"
             >
               <path
                 opacity={0.5}
@@ -680,7 +680,7 @@ export default function ScheduleSession() {
               viewBox="0 0 121 289"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-[400px] right-[0px] z-0"
+              className="absolute top-[400px] right-[0px] z-[-1]"
             >
               <path
                 opacity={0.5}
