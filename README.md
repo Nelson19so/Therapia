@@ -15,13 +15,13 @@ Therapia is a mobile, desktop, tablet therapy webapp designed to provide accessi
 
 <apps.py>
 
-,,,bash
+'''bash
 <apps.py class>class < your-app-name >Config(AppConfig):<apps.py class>
 <apps.py conf>default_auto_field = 'django.db.models.BigAutoField'<apps.py conf>
 <apps.py name>name = "'apps'.< your-app-name >"<apps.py name>
 
 <apps.py>
-,,,
+'''
 
 - navigate to server, then settings.pyand add to installed apps
 - eg: <installed apps>"INSTALLED_APPS = [
