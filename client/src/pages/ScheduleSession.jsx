@@ -9,7 +9,7 @@ export default function ScheduleSession() {
         <section className="flex justify-center">
           <div className="relative max-w-[1700px] w-full flex justify-center">
             <div className="max-w-[1591px] w-full flex justify-center">
-              <div className="w-full 2xl:max-w-[1394px] xl:max-w-[1280px] lg:max-w-[1024px] max-w-[768px] 2xl:pl-[0px] md:pl-[40px] sm:pl-[20px] pl-[10px] md:pr-[0px] sm:pr-[20px] pr-[10px] flex md:flex-row flex-col xl:pt-[34px] lg:pt-[49px] sm:pt-[30px] pt-[30px] pb-[29px] gap-x-[7px] gap-y-[50px] items-center">
+              <div className="w-full 2xl:max-w-[1394px] xl:max-w-[1280px] lg:max-w-[1024px] max-w-[768px] 2xl:pl-[0px] md:pl-[40px] sm:pl-[20px] pl-[19px] md:pr-[0px] sm:pr-[20px] pr-[19px] flex md:flex-row flex-col xl:pt-[34px] lg:pt-[49px] sm:pt-[30px] pt-[30px] pb-[29px] gap-x-[7px] gap-y-[50px] items-center">
                 <div className="w-full xl:max-w-[650px] lg:max-w-[515px] md:max-w-[380px] sm:max-w-[600px] max-w-[300px] flex flex-col gap-y-[15px] justify-center">
                   <h2 className="xl:text-[40px]/[45px] lg:text-[32px]/[36px] text-[23px]/[26px] text-[var(--secondary)] font-bold md:w-full sm:w-[380px]">
                     Find Your Perfect Therapist Book Your Session with Ease{" "}
@@ -279,14 +279,14 @@ export default function ScheduleSession() {
         <section className="flex justify-center">
           <div className="max-w-[1591px] w-full flex justify-center sm:py-[143px] py-[50px]">
             <div className="relative xl:max-w-[1196px] lg:max-w-[940px] md:max-w-[684px] sm:max-w-[590px] max-w-[300px] w-full flex rounded-[20px] bg-[var(--secondary)] text-[var(--text-light)] lg:min-h-[503px] sm:min-h-[362px] min-h-[833px] z-[-1] lg:overflow-x-visible overflow-x-clip">
-              <div className="pt-[35px] lg:pl-[44px] sm:pl-[31px] pl-[22px]">
-                <span className="text-[14px]/[35px] font-medium block">
+              <div className="pt-[35px] lg:pl-[44px] sm:pl-[31px] pl-[22px] sm:pr-[0px] pr-[22px]">
+                <span className="sm:text-[14px]/[35px] text-[10px]/[18px] font-medium block">
                   Effortlessly connect with licensed professionals
                 </span>
-                <h4 className="xl:text-[40px]/[40px] lg:text-[32px]/[36px] text-[23px]/[26px] font-bold xl:max-w-[616px] lg:max-w-[480px] max-w-[412px] mt-[-8px]">
+                <h4 className="xl:text-[40px]/[40px] lg:text-[32px]/[36px] text-[23px]/[26px] font-bold xl:max-w-[616px] lg:max-w-[480px] max-w-[412px] sm:mt-[-8px] mt-[-2px]">
                   Discover Your Ideal Therapist Today
                 </h4>
-                <p className="xl:text-[14px]/[35px] text-[14px]/[25px] font-medium block xl:max-w-[auto] max-w-[400px] mt-[15px] mb-[25px]">
+                <p className="xl:text-[14px]/[35px] text-[14px]/[25px] font-medium block xl:max-w-[800px] max-w-[400px] mt-[15px] mb-[25px]">
                   Embrace Your Mental Wellness Journey with personalized support
                 </p>
                 <button className="mt-[20px] text-[11px]/[35px] font-semibold flex items-center justify-center w-[197px] h-[41px] rounded-[7px] bg-[var(--primary)]">
