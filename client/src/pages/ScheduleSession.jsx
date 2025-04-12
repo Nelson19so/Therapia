@@ -9,9 +9,9 @@ export default function ScheduleSession() {
         <section className="flex justify-center">
           <div className="relative max-w-[1700px] w-full flex justify-center">
             <div className="max-w-[1591px] w-full flex justify-center">
-              <div className="w-full max-w-[1394px] flex pt-[34px] pb-[29px] gap-x-[7px]">
-                <div className="w-full max-w-[650px] flex flex-col gap-y-[15px] justify-center">
-                  <h2 className="text-[40px]/[45px] text-[var(--secondary)] font-bold">
+              <div className="w-full 2xl:max-w-[1394px] xl:max-w-[1280px] lg:max-w-[1024px] max-w-[768px] 2xl:pl-[0px] md:pl-[40px] sm:pl-[20px] pl-[10px] md:pr-[0px] sm:pr-[20px] pr-[10px] flex md:flex-row flex-col xl:pt-[34px] lg:pt-[49px] sm:pt-[30px] pt-[30px] pb-[29px] gap-x-[7px] gap-y-[50px] items-center">
+                <div className="w-full xl:max-w-[650px] lg:max-w-[515px] md:max-w-[380px] sm:max-w-[600px] max-w-[300px] flex flex-col gap-y-[15px] justify-center">
+                  <h2 className="xl:text-[40px]/[45px] lg:text-[32px]/[36px] text-[23px]/[26px] text-[var(--secondary)] font-bold md:w-full sm:w-[380px]">
                     Find Your Perfect Therapist Book Your Session with Ease{" "}
                     <span className="text-[var(--primary)]">
                       <span className="block">Prioritize Your Mental</span>{" "}
@@ -19,17 +19,17 @@ export default function ScheduleSession() {
                     </span>{" "}
                     our Mind Matters.{" "}
                   </h2>
-                  <p className="text-[14px]/[21px] text-[var(--text-primary)] max-w-[624px]">
+                  <p className="xl:text-[14px]/[21px] text-[12px]/[18px] text-[var(--text-primary)] xl:max-w-[624px] lg:max-w-[489px] md:max-w-[338px] max-w-[600px]">
                     The "Schedule Sessions" page empowers you to connect with
                     licensed therapists tailored to your unique needs. With an
                     intuitive interface, you can effortlessly filter{" "}
-                    <span className="block">
+                    <span className="xl:block">
                       through options, ensuring you find the right match for
                       your therapeutic journey.
                     </span>{" "}
                     Experience the comfort of booking at your convenience, all
                     while being{" "}
-                    <span className="block">
+                    <span className="md:block">
                       supported in a safe and nurturing environment.
                     </span>
                   </p>
@@ -37,14 +37,14 @@ export default function ScheduleSession() {
                     Start Your Therapeutic Journey
                   </button>
                 </div>
-                <div className="bg-[url(/images/hero-image-schedule-session-page.webp)] w-[583px] h-[568px] bg-contain bg-no-repeat bg-center relative">
+                <div className="bg-[url(/images/hero-image-schedule-session-page.webp)] xl:w-[583px] lg:w-[462px] md:w-[341px] sm:w-[589px] w-[299px] xl:h-[568px] lg:h-[450px] md:h-[332px] sm:h-[574px] h-[291px] bg-contain bg-no-repeat bg-center relative md:ml-[0px] sm:ml-[11px] ml-[1px]">
                   <svg
                     width={197}
                     height={170}
                     viewBox="0 0 197 170"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="absolute top-[413px] left-[-11px] z-[-1]"
+                    className="absolute bottom-[-15px] left-[-11px] z-[-1]"
                   >
                     <path
                       d="M0.015625 0L196.016 170H0.0156648L0.015625 0Z"
@@ -58,7 +58,7 @@ export default function ScheduleSession() {
                   viewBox="0 0 200 256"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute top-[296px] right-[0px] z-[-1]"
+                  className="absolute bottom-[79px] right-[0px] z-[-1] lg:block hidden"
                 >
                   <path
                     opacity={0.5}
@@ -73,19 +73,19 @@ export default function ScheduleSession() {
 
         {/* Find Your Perfect Therapist Section */}
         <section className="flex justify-center">
-          <div className="relative max-w-[1700px] w-full flex justify-center">
+          <div className="relative max-w-[1700px] w-full flex justify-center xl:mb-[0px] sm:mb-[40px]">
             <div className="max-w-[1591px] w-full flex justify-center">
-              <div className="max-w-[1218px] w-full flex flex-col pt-[20px] pb-[7px]">
+              <div className="2xl:max-w-[1218px] xl:max-w-[1190px] lg:max-w-[934px] max-w-[678px] w-full flex flex-col lg:pt-[20px] md:pt-[53px] pt-[32px] lg:pb-[7px] md:pb-[22px] pb-[0px] lg:gap-y-[0px] gap-y-[5px]">
                 <div className="flex flex-col items-center text-[var(--secondary)] pt-[10px] pb-[16px]">
-                  <h4 className="text-[24px]/[25px] font-bold">
+                  <h4 className="lg:text-[24px]/[25px] text-[20px]/[21px] font-bold">
                     Find Your Perfect Therapist
                   </h4>
-                  <span className="text-[14px]/[25px]">
+                  <span className="lg:text-[14px]/[25px] text-[12px]/[18px]">
                     Book Your Session with Ease
                   </span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="w-[374px] h-[524px] bg-contain bg-no-repeat bg-center bg-[url(/images/perfect-therapist-schedule-session-page.webp)] relative">
+                <div className="flex sm:flex-row flex-col items-center lg:justify-between justify-center overflow-x-clip">
+                  <div className="xl:w-[374px] w-[300px] xl:h-[524px] sm:h-[460px] h-[420px] bg-contain bg-no-repeat bg-center bg-[url(/images/perfect-therapist-schedule-session-page.webp)] relative lg:block sm:hidden sm:mt-[0px] mt-[10px] sm:mb-[0px] mb-[20px]">
                     <svg
                       width={44}
                       height={90}
@@ -222,7 +222,7 @@ export default function ScheduleSession() {
                       />
                     </svg>
                   </div>
-                  <div className="max-w-[800px] w-full grid grid-cols-[213px_213px_213px] gap-x-[10px] gap-y-[30px] justify-center">
+                  <div className="xl:max-w-[800px] max-w-[610px] w-full grid xl:grid-cols-[213px_213px_213px] lg:grid-cols-[188px_188px_188px] md:grid-cols-[206px_206px_206px] sm:grid-cols-[275px_275px] grid-cols-[280px] lg:gap-x-[10px] gap-x-[30px] gap-y-[30px] justify-center lg:mt-[0px] mt-[20px]">
                     {/* Schedule Process Card Component */}
                     <ScheduleSessionProcessCard
                       svgCode={1}
@@ -262,7 +262,7 @@ export default function ScheduleSession() {
                   viewBox="0 0 260 248"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="absolute left-[0px] bottom-[0px] z-[-1]"
+                  className="absolute left-[0px] bottom-[0px] z-[-1] lg:block hidden"
                 >
                   <path
                     opacity={0.5}
@@ -277,31 +277,31 @@ export default function ScheduleSession() {
 
         {/* Discover Your Ideal Therapist Today Section */}
         <section className="flex justify-center">
-          <div className="max-w-[1591px] w-full flex justify-center py-[143px]">
-            <div className="relative max-w-[1196px] w-full flex rounded-[20px] bg-[var(--secondary)] text-[var(--text-light)] min-h-[503px] z-[-1]">
-              <div className="pt-[35px] pl-[44px]">
+          <div className="max-w-[1591px] w-full flex justify-center sm:py-[143px] py-[50px]">
+            <div className="relative xl:max-w-[1196px] lg:max-w-[940px] md:max-w-[684px] sm:max-w-[590px] max-w-[300px] w-full flex rounded-[20px] bg-[var(--secondary)] text-[var(--text-light)] lg:min-h-[503px] sm:min-h-[362px] min-h-[833px] z-[-1] lg:overflow-x-visible overflow-x-clip">
+              <div className="pt-[35px] lg:pl-[44px] sm:pl-[31px] pl-[22px]">
                 <span className="text-[14px]/[35px] font-medium block">
                   Effortlessly connect with licensed professionals
                 </span>
-                <h4 className="text-[40px]/[40px] font-bold max-w-[616px] mt-[-8px]">
+                <h4 className="xl:text-[40px]/[40px] lg:text-[32px]/[36px] text-[23px]/[26px] font-bold xl:max-w-[616px] lg:max-w-[480px] max-w-[412px] mt-[-8px]">
                   Discover Your Ideal Therapist Today
                 </h4>
-                <p className="text-[14px]/[35px] font-medium block">
+                <p className="xl:text-[14px]/[35px] text-[14px]/[25px] font-medium block xl:max-w-[auto] max-w-[400px] mt-[15px] mb-[25px]">
                   Embrace Your Mental Wellness Journey with personalized support
                 </p>
                 <button className="mt-[20px] text-[11px]/[35px] font-semibold flex items-center justify-center w-[197px] h-[41px] rounded-[7px] bg-[var(--primary)]">
                   Begin Your Healing Experience
                 </button>
               </div>
-              <div className="absolute left-[604px] bottom-[0px]">
-                <div className="relative w-[452px] h-[729px] bg-contain bg-no-repeat bg-center bg-[url(/images/ideal-therapist-schedule-session-page.webp)] overflow-y-clip">
+              <div className="absolute xl:left-[604px] lg:left-[374px] sm:left-[359px] left-[-10px] bottom-[0px]">
+                <div className="relative lg:w-[452px] w-[323px] lg:h-[729px] h-[522px] bg-contain bg-no-repeat bg-center bg-[url(/images/ideal-therapist-schedule-session-page.webp)] overflow-y-clip">
                   <svg
                     width={351}
                     height={352}
                     viewBox="0 0 351 352"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="absolute right-[-22px] bottom-[-5px] z-[-1]"
+                    className="absolute right-[-22px] bottom-[-5px] z-[-1] lg:w-[auto] w-[251px] lg:h-[auto] h-[252px]"
                   >
                     <path
                       opacity={0.5}
@@ -315,7 +315,7 @@ export default function ScheduleSession() {
                     viewBox="0 0 102 101"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="absolute right-[26px] bottom-[374px] z-[-1]"
+                    className="absolute right-[26px] bottom-[374px] z-[-1] lg:block sm:hidden"
                   >
                     <ellipse
                       cx={7.93508}
@@ -616,17 +616,17 @@ export default function ScheduleSession() {
         <section className="flex justify-center bg-[var(--primary)]">
           <div className="relative max-w-[1700px] w-full flex justify-center z-[0]">
             <div className="max-w-[1591px] w-full flex justify-center">
-              <div className="max-w-[1301px] w-full flex flex-col gap-y-[41px] items-center pt-[34px] pb-[94px]">
-                <div className="max-w-[1195px] w-full flex">
+              <div className="max-w-[1301px] w-full flex flex-col gap-y-[41px] items-center sm:pt-[34px] pt-[64px] pb-[94px]">
+                <div className="2xl:max-w-[1195px] xl:max-w-[1137px] lg:max-w-[881px] md:max-w-[625px] sm:max-w-[580px] max-w-[300px] w-full flex">
                   <div className="max-w-[1137px] w-full">
                     <div className="text-[var(--text-light)] flex flex-col gap-y-[8px]">
-                      <span className="text-[14px]/[35px] font-medium">
+                      <span className="lg:text-[14px]/[35px] text-[12px]/[30px] font-medium">
                         Easily Schedule Your Therapy Sessions
                       </span>
-                      <h4 className="text-[40px]/[35px] font-semibold">
+                      <h4 className="xl:text-[40px]/[35px] lg:text-[32px]/[28px] sm:text-[23px]/[20px] text-[23px]/[25px] font-semibold">
                         Connect with Your Ideal Therapist Instantly
                       </h4>
-                      <p className="text-[14px]/[25px] font-medium">
+                      <p className="lg:text-[14px]/[25px] text-[12px]/[22px] font-medium">
                         The "Schedule Sessions" page is meticulously crafted to
                         facilitate your journey toward mental wellness. Our
                         intuitive platform enables you to seamlessly discover
@@ -640,7 +640,7 @@ export default function ScheduleSession() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full flex items-center justify-between">
+                <div className="grid 2xl:grid-cols-[421px_421px_421px] xl:grid-cols-[384px_384px_384px] lg:grid-cols-[317px_317px_317px] md:grid-cols-[329px_329px] sm:grid-cols-[600px] grid-cols-[300px] gap-[19px] items-center justify-between">
                   {/* Schedule Image Card Component */}
                   <ScheduleSessionImageCard
                     imgCode={1}
@@ -666,7 +666,7 @@ export default function ScheduleSession() {
               viewBox="0 0 173 220"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-[0px] left-[0px] z-[-1]"
+              className="absolute top-[0px] left-[0px] z-[-1] lg:block hidden"
             >
               <path
                 opacity={0.5}
@@ -680,7 +680,7 @@ export default function ScheduleSession() {
               viewBox="0 0 121 289"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute top-[400px] right-[0px] z-[-1]"
+              className="absolute top-[400px] right-[0px] z-[-1] lg:block hidden"
             >
               <path
                 opacity={0.5}
@@ -694,27 +694,27 @@ export default function ScheduleSession() {
         {/* Client Testimonials Section */}
         <section className="flex justify-center">
           <div className="max-w-[1591px] w-full flex justify-center">
-            <div className="max-w-[1334px] w-full flex flex-col items-center pt-[70px] pb-[37px]">
-              <div className="flex flex-col items-center justify-center text-[var(--text-dark)] h-[121px]">
-                <h4 className="text-[40px]/[35px] font-semibold">
+            <div className="2xl:max-w-[1334px] xl:max-w-[1196px] lg:max-w-[940px] md:max-w-[684px] sm:max-w-[560px] w-full max-w-[280px] flex flex-col items-center pt-[70px] pb-[37px]">
+              <div className="flex flex-col items-center justify-center text-[var(--text-dark)] h-[121px] sm:gap-y-[0px] gap-y-[10px]">
+                <h4 className="xl:text-[40px]/[35px] lg:text-[32px]/[28px] text-[23px]/[20px] font-semibold">
                   Client Testimonials
                 </h4>
-                <p className="text-[14px]/[35px] font-medium">
+                <p className="sm:text-[14px]/[35px] text-[14px]/[21px] font-medium text-center">
                   Experience transformed mental wellness through Therapia.
                 </p>
               </div>
-              <div className="relative w-full mt-[16px]">
+              <div className="relative w-full sm:mt-[16px] mt-[50px]">
                 <div className="w-full bg-[var(--background-base)] rounded-[15px] shadow-[0_6px_4px_0_rgba(0,0,0,0.25)]">
-                  <div className="flex justify-between pt-[39px] pb-[33px] pl-[133px] pr-[84px]">
+                  <div className="flex md:flex-row flex-col md:items-start items-center justify-between md:pt-[39px] pt-[57px] pb-[33px] 2xl:pl-[133px] lg:pl-[64px] md:pl-[52px] pl-[29px] 2xl:pr-[84px] lg:pr-[28px] pr-[29px]">
                     <div className="relative z-0">
-                      <div className="w-[335px] h-[298px] bg-contain bg-no-repeat bg-center bg-[url(/images/testimonial-image-schedule-session-page.webp)]"></div>
+                      <div className="lg:w-[335px] sm:w-[292px] w-[200px] lg:h-[298px] sm:h-[260px] h-[178px] bg-contain bg-no-repeat bg-center bg-[url(/images/testimonial-image-schedule-session-page.webp)]"></div>
                       <svg
                         width={335}
                         height={298}
                         viewBox="0 0 335 298"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="absolute top-[-18px] left-[-18px] z-[-1]"
+                        className="absolute top-[-18px] left-[-18px] z-[-1] lg:w-[auto] sm:w-[292px] w-[200px] lg:h-[auto] sm:h-[260px] h-[178px]"
                       >
                         <path
                           d="M0.499878 10C0.499878 4.7533 4.75317 0.5 9.99988 0.5H334.5V297.5H0.499878V10Z"
@@ -727,7 +727,7 @@ export default function ScheduleSession() {
                         viewBox="0 0 319 312"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="absolute top-[0px] left-[44px] z-[-1]"
+                        className="absolute top-[0px] sm:left-[44px] left-[28px] z-[-1] lg:w-[auto] sm:w-[278px] w-[190px] lg:h-[auto] sm:h-[272px] h-[196px]"
                       >
                         <path
                           d="M0.499878 9.99999C0.499878 4.75329 4.75317 0.5 9.99988 0.5H318.5V311.5H0.499878V9.99999Z"
@@ -735,11 +735,11 @@ export default function ScheduleSession() {
                         />
                       </svg>
                     </div>
-                    <div className="mt-[96px] flex flex-col gap-y-[10px] max-w-[686px] text-[var(--text-dark)]">
+                    <div className="lg:mt-[96px] md:mt-[5px] mt-[42px] flex flex-col gap-y-[10px] xl:max-w-[686px] lg:max-w-[444px] md:max-w-[234px] max-w-[522px] md:text-start text-center text-[var(--text-dark)]">
                       <h5 className="text-[24px]/[35px] font-semibold">
                         A Life-Changing Experience
                       </h5>
-                      <p className="text-[14px]/[15px]">
+                      <p className="text-[14px]/[20px]">
                         "Thanks to Therapia, I found the support I needed in a
                         therapist who truly understands my journey. The platform
                         made it effortless to connect and schedule sessions that
@@ -777,7 +777,7 @@ export default function ScheduleSession() {
                     fill="var(--primary)"
                   />
                 </svg>
-                <div className="absolute top-[-15px] w-[1334px] h-[370px] rotate-[-3deg] bg-[var(--primary)] rounded-[15px] z-[-4]"></div>
+                <div className="absolute lg:top-[-15px] sm:top-[-5px] top-[0px] 2xl:w-[1334px] xl:w-[1196px] lg:w-[940px] md:w-[684px] sm:w-[560px] w-[280px] lg:h-[370px] md:h-[332px] sm:h-[522px] h-[555px] rotate-[-3deg] bg-[var(--primary)] rounded-[15px] z-[-4]"></div>
               </div>
             </div>
           </div>
@@ -786,19 +786,19 @@ export default function ScheduleSession() {
         {/* Connect with a Therapist Section */}
         <section className="flex justify-center">
           <div className="max-w-[1591px] w-full flex justify-center">
-            <div className="mt-[53px] mb-[112px] max-w-[1261px] w-full flex justify-center gap-x-[28px] py-[30px] rounded-[20px] shadow-[0_0_8px_0_rgba(0,0,0,0.25)]">
-              <div className="max-w-[508px] flex flex-col gap-y-[21px] bg-[var(--primary)] rounded-[20px] pt-[31px] pb-[51px] pl-[24px] text-[var(--text-light)]">
-                <span className="text-[24px]/[35px] font-medium">
+            <div className="mt-[53px] md:mb-[112px] mb-[85px] 2xl:max-w-[1261px] xl:max-w-[1190px] lg:max-w-[934px] md:max-w-[678px] sm:max-w-[600px] max-w-[320px] w-full flex lg:flex-row flex-col justify-center lg:items-stretch items-center gap-[28px] sm:py-[30px] py-[10px] rounded-[20px] shadow-[0_0_8px_0_rgba(0,0,0,0.25)]">
+              <div className="xl:max-w-[508px] lg:max-w-[423px] md:max-w-[618px] sm:max-w-[560px] max-w-[300px] w-full flex flex-col xl:gap-y-[21px] gap-y-[42px] bg-[var(--primary)] rounded-[20px] pt-[31px] pb-[51px] pl-[24px] xl:pr-[0px] pr-[24px] text-[var(--text-light)]">
+                <span className="lg:text-[24px]/[35px] text-[20px]/[30px] font-medium">
                   Connect with a Therapist
                 </span>
-                <div>
+                <div className="lg:max-w-[508px] max-w-[330px]">
                   <svg
                     width={28}
                     height={25}
                     viewBox="0 0 28 25"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="inline mt-[-14px]"
+                    className="inline lg:mt-[-14px] mt-[-7px] lg:w-[auto] w-[24px] lg:h-[auto] h-[21px] xl:mr-[0px] lg:mr-[2px] mr-[5px]"
                   >
                     <path
                       d="M1.54263 23.2917L0.108881 22.7213C0.00643603 22.9791 -0.0245685 23.2597 0.0191353 23.5336C0.0628392 23.8075 0.179633 24.0646 0.357204 24.2777C0.534776 24.4908 0.766546 24.652 1.02809 24.7444C1.28963 24.8368 1.57124 24.8569 1.84326 24.8026L1.54263 23.2917ZM8.79772 21.8487L9.52846 20.4905L9.03976 20.2285L8.49709 20.3364L8.79772 21.8487ZM4.0463 16.9971L5.48005 17.5675L5.73134 16.9293L5.42917 16.3142L4.0463 16.9971ZM24.6676 12.5001C24.6676 17.5043 20.2693 21.7501 14.6005 21.7501V24.8334C21.7554 24.8334 27.751 19.416 27.751 12.5001H24.6676ZM4.53501 12.5001C4.53501 7.49583 8.93492 3.25008 14.6021 3.25008V0.166748C7.44721 0.166748 1.45013 5.58417 1.45013 12.5001H4.53501ZM14.6021 3.25008C20.2693 3.25008 24.6676 7.49583 24.6676 12.5001H27.751C27.751 5.58417 21.757 0.166748 14.6021 0.166748V3.25008ZM14.6005 21.7501C12.7428 21.7501 11.0131 21.2876 9.52846 20.4905L8.06697 23.2054C10.0763 24.2826 12.3208 24.8421 14.6005 24.8334V21.7501ZM1.84326 24.8026L9.09834 23.3596L8.49709 20.3364L1.24201 21.7794L1.84326 24.8041V24.8026ZM5.42917 16.3142C4.84226 15.1282 4.53734 13.8233 4.53501 12.5001H1.45013C1.45013 14.3501 1.88488 16.1045 2.66188 17.6801L5.42917 16.3142ZM2.61409 16.4267L0.108881 22.7229L2.9733 23.8606L5.47696 17.566L2.61255 16.4267H2.61409Z"
@@ -817,10 +817,11 @@ export default function ScheduleSession() {
                       fill="var(--text-light)"
                     />
                   </svg>
-                  <h4 className="text-[32px]/[35px] font-semibold inline">
+                  <h4 className="xl:text-[32px]/[35px] lg:text-[27px]/[30px] text-[23px]/[26px] font-semibold inline">
                     Connect with a Therapist Who Understands You
                   </h4>
                 </div>
+                <div className="flex lg:flex-col sm:flex-row flex-col gap-y-[21px] justify-between">
                 <div className="flex items-center gap-x-[2px]">
                   <svg
                     width={40}
@@ -905,8 +906,9 @@ export default function ScheduleSession() {
                     </span>
                   </div>
                 </div>
+                </div>
               </div>
-              <div className="max-w-[665px] w-full">
+              <div className="2xl:max-w-[665px] xl:max-w-[594px] lg:max-w-[423px] md:max-w-[618px] sm:max-w-[560px] max-w-[300px] w-full">
                 <form
                   action=""
                   className="flex flex-col gap-y-[22px]"
@@ -917,31 +919,31 @@ export default function ScheduleSession() {
                     name=""
                     id=""
                     placeholder="Full name"
-                    className="text-[17px]/[35px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px]"
+                    className="md:text-[17px]/[35px] text-[12px]/[25px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px]"
                   />
-                  <div className="flex items-center justify-between">
+                  <div className="flex xl:flex-row flex-col items-center justify-between gap-x-[20px] gap-y-[22px]">
                     <input
                       type="email"
                       name=""
                       id=""
                       placeholder="E-mail"
-                      className="text-[17px]/[35px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px] max-w-[379px] w-full"
+                      className="md:text-[17px]/[35px] text-[12px]/[25px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px] xl:max-w-[379px] max-w-[618px] w-full"
                     />
                     <input
                       type="text"
                       name=""
                       id=""
                       placeholder="Phone Number"
-                      className="text-[17px]/[35px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px] max-w-[266px] w-full"
+                      className="md:text-[17px]/[35px] text-[12px]/[25px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px] xl:max-w-[266px] max-w-[618px] w-full"
                     />
                   </div>
                   <textarea
                     name=""
                     id=""
                     placeholder="Your Message"
-                    className="h-[190px] resize-none text-[17px]/[35px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px]"
+                    className="h-[190px] resize-none md:text-[17px]/[35px] text-[12px]/[25px] text-[var(--text-dark)] font-medium placeholder-[var(--text-dark)] px-[19px] py-[10px] outline-[2px] outline-[var(--primary)] rounded-[10px]"
                   ></textarea>
-                  <button className="text-[17px]/[35px] text-[var(--text-light)] font-[800] bg-[var(--primary)] py-[10px] rounded-[10px]">
+                  <button className="md:text-[17px]/[35px] text-[12px]/[25px] text-[var(--text-light)] font-[800] bg-[var(--primary)] py-[10px] sm:mb-[0px] mb-[10px] rounded-[10px]">
                     Seamlessly Schedule Your Therapy Session
                   </button>
                 </form>
