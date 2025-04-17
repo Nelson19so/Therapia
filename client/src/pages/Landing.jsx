@@ -19,9 +19,11 @@ export default function Landing() {
                   personalized mental wellness tools anytime, anywhere.
                 </p>
                 <div className="mt-[6px] flex gap-x-[12px]">
-                  <button className="rounded-[4px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[95px] h-[33px] flex items-center justify-center text-[12px]/[18px] font-semibold">
-                    Get Started
-                  </button>
+                  <a href="/signup">
+                    <button className="rounded-[4px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[95px] h-[33px] flex items-center justify-center text-[12px]/[18px] font-semibold cursor-pointer">
+                      Get Started
+                    </button>
+                  </a>
                   <button className="rounded-[4px] bg-[var(--accent-base)] text-[var(--secondary)] px-[13px] h-[33px] flex items-center text-[12px]/[18px] font-medium">
                     Explore Features
                   </button>
