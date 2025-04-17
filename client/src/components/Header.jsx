@@ -55,12 +55,16 @@ export default function Header() {
               </ul>
             </nav>
             <div className="md:flex gap-x-[19px] hidden">
-              <button className="rounded-[6px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[121px] h-[30px] flex items-center justify-center text-[12px]/[18px] font-semibold">
-                Create Account
-              </button>
-              <button className="rounded-[6px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[121px] h-[30px] flex items-center justify-center text-[12px]/[18px] font-semibold">
-                Login
-              </button>
+              <a href="/signup">
+                <button className="rounded-[6px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[121px] h-[30px] flex items-center justify-center text-[12px]/[18px] font-semibold cursor-pointer">
+                  Create Account
+                </button>
+              </a>
+              <a href="/login">
+                <button className="rounded-[6px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[121px] h-[30px] flex items-center justify-center text-[12px]/[18px] font-semibold cursor-pointer">
+                  Login
+                </button>
+              </a>
             </div>
             <div
               className="md:hidden w-[20px] h-[13px] flex flex-col justify-between z-2"
@@ -116,8 +120,12 @@ export default function Header() {
                       </svg>
                     </li>
                   </a>
-                  <li>Create Account</li>
-                  <li>Login</li>
+                  <a href="/signup">
+                    <li>Create Account</li>
+                  </a>
+                  <a href="/login">
+                    <li>Login</li>
+                  </a>
                 </ul>
               </div>
             </nav>
