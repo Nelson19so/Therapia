@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.password_validation import validate_password
 from .models import CustomUser, OTP
 from django.core.exceptions import ValidationError
+from rest_framework_simplejwt.token import RefreshToken
 
 User = get_user_model()
 
@@ -23,41 +24,38 @@ class UserCreateSerializer(serializers.ModelSerializer):
             'password', 'confirm_password', 'terms_accepted'
         ]
 
-    def validate(self, attrs):
-        first_name = attrs.get('first_name')
-        last_name = attrs.get('last_name')
-        email = attrs.get('email')
-        phone_number = attrs.get("phone_number")
+    def validate(self, data):
+        errors = {}
 
         # Cleaner filter
-        if CustomUser.objects.filter(
-            first_name=first_name,
-            last_name=last_name,
-            email=email,
-            phone_number=phone_number
-        ).exists():
-            raise serializers.ValidationError({
-                'user': "A user with this information already exists."
-            })
+        if CustomUser.objects.filter(email=data['email']).exists():
+            errors['email'] = 'Email already registered'
+
+        if CustomUser.objects.filter(phone_number=data['phone_number']).exists():
+            errors['phone_number'] = 'Phone number already registered'
 
         # Password confirmation
-        if attrs['password'] != attrs['confirm_password']:
-            raise serializers.ValidationError({
-                "password": "Password and Confirm Password must match."
-            })
+        if data['password'] != data['confirm_password']:
+            errors['password'] = 'Phone number already exist'
 
         # Terms check
-        if not attrs.get('terms_accepted', False):
-            raise serializers.ValidationError({
-                "terms_accepted": "Please accept the terms and conditions."
-            })
+        if not data('terms_accepted'):
+            errors['errors'] = 'You must accept terms'
 
-        return attrs
+        return data
 
     def create(self, validated_data):
         validated_data.pop('confirm_password')  # Don't store confirm_password
         user = User.objects.create_user(**validated_data)
-        return user
+        refresh = RefreshToken.for_user(user)
+
+        return {
+            'user': user,
+            'tokens': {
+                'access': str(refresh.access_token),
+                'refresh': str(refresh)
+            }
+        }
 
 
 """
@@ -67,17 +65,22 @@ class UserLogInSerialier(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField()
 
-    def validate(self, attrs):
-        email = attrs.get('email')
-        password = attrs.get("password")
+    def validate(self, data):
+        user = authenticate(email=data['email'], password=data['password'])
 
-        user = authenticate(email=email, password=password)
-
-        if user is not None:
-            raise serializers.ValidationError("Invalid credentials")
+        if not user:
+            raise serializers.ValidationError({
+                'non_field_errors': ["Invalid credentials"]
+            })
         
-        attrs['user'] = user
-        return attrs
+        refresh = RefreshToken.for_user(user)
+        data['tokens'] = {
+            'access': str(refresh.access_token),
+            'refresh': str(refresh)
+        }
+        
+        data['user'] = user
+        return data
 
 # OTP request
 class RequestOTPSerializer(serializers.Serializer):

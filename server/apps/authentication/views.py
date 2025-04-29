@@ -6,6 +6,7 @@ from .models import CustomUser, OTP
 from .serializers import UserCreateSerializer, UserProfileSerializer, UserLogInSerialier, RequestOTPSerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
+from rest_framework_simplejwt.token import RefreshToken
 
 User = get_user_model()
 
@@ -21,13 +22,17 @@ class UserSignUpListCreateApiView(APIView):
     if serializer.is_valid():
       serializer.save()  # Save the new user to the database
       return Response({
-        'message': 'User successfully created!',
-        'user': serializer.data
+        'success': True,
+        'user': {
+          'email': result['user'].email,
+          'first_name': result['user'].first_name
+        },
+        'tokens': result['tokens']
       }, status=status.HTTP_201_CREATED)
 
     return Response({
-      'error': 'Invalid data',
-      'details': serializer.errors
+      'success': False,
+      'error': serializer.errors
     }, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -67,21 +72,23 @@ class UserLoginListCreateApiView(generics.GenericAPIView):
   
   def post(self, request, *args, **kwargs):
     serializer = self.get_serializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
-
-    user = serializer.validated_data['user']
-
-    login(request, user)
-
+    
+    if serializer.is_valid():
+      user = serializer.validated_data['user']
+      login(request, user)
+      
+      return Response({
+        'success': True,
+        'user': {
+          'email': user.email,
+        },
+        'tokens': serializer.validated_data['tokens']
+      })
+    
     return Response({
-      'user': {
-        'id': user.id,
-        'email': user.email,
-        'first_name': user.first_name,
-        'last_name': user.last_name
-      },
-      'message': 'Login successful!'
-      }, status=status.HTTP_200_OK)
+      'success': False,
+      'errors': serializer.errors
+    }, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserLogoutView(APIView):
@@ -106,27 +113,33 @@ class RequestOTPView(generics.CreateAPIView):
   def create(self, request, *args, **kwargs):
     """Handle OTP request via email"""
     serializer = self.get_serializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
-
-    email = serializer.validated_data['email']
-    
-    try:
+    if serializer.is_valid():
+      email = serializer.validated_data['email']
       user = User.objects.get(email=email)
-    except User.DoesNotExist:
-      return Response({'error': 'User with this email does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
-    OTP.objects.filter(user=user, is_verified=False).delete()
+      OTP.objects.filter(user=user, is_verified=False).delete()
 
-    # Create OTP and associate it with the user
-    otp = OTP.objects.create(user=user)
+      # Create OTP and associate it with the user
+      otp = OTP.objects.create(user=user)
 
-    # Send OTP to the user's email
-    send_mail(
-      'Password Reset OTP',
-      f'Your OTP for resetting password is {otp.otp}',
-      settings.DEFAULT_FROM_EMAIL,
-      [user.email],
-      fail_silently=False,
-    )
+      # Send OTP to the user's email
+      send_mail(
+        'Password Reset OTP',
+        f'Your OTP for resetting password is {otp.otp}',
+        settings.DEFAULT_FROM_EMAIL,
+        [user.email],
+        fail_silently=False,
+      )
 
-    return Response({'message': 'OTP sent to your email'}, status=status.HTTP_200_OK)
+      return Response({
+        'success': True,
+        'user': {
+          'email': user.email,
+          'otp': user.otp,
+        },
+      }, status=status.HTTP_200_OK)
+
+    return Response({
+        'success': False, 
+        'error': serializer.error,
+      },""" status code goes here """)
