@@ -36,12 +36,15 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
         # Password confirmation
         if data['password'] != data['confirm_password']:
-            errors['password'] = 'Phone number already exist'
+           errors['password'] = 'Passwords do not match'
 
         # Terms check
-        if not data('terms_accepted'):
-            errors['errors'] = 'You must accept terms'
+        if not data.get('terms_accepted'):
+            errors['terms_accepted'] = 'You must accept terms'
 
+        if errors:
+            raise serializers.ValidationError(errors)
+        
         return data
 
     def create(self, validated_data):

@@ -20,26 +20,29 @@ class UserSignUpListCreateApiView(APIView):
         serializer = UserCreateSerializer(data=request.data)
 
         if serializer.is_valid():
-          serializer.save()  # Save the new user to the database
-          return Response({
-              'success': True,
-              'user': {
-                'email': serializer.validated_data['email'],
-                'first_name': serializer.validated_data['first_name']
-              },
-              'tokens': serializer.validated_data['tokens']
-          }, status=status.HTTP_201_CREATED)
+            user_data = serializer.save()  # Save the new user to the database
+
+            user = user_data['user']  # Extract the user object
+            tokens = user_data['tokens']  # Extract the tokens
+            
+            return Response({
+                'success': True,
+                'user': {
+                    'email': user.email,
+                    'first_name': user.first_name
+                },
+                'tokens': tokens
+            }, status=status.HTTP_201_CREATED)
+
 
         return Response({
           'success': False,
           'error': serializer.errors
         }, status=status.HTTP_400_BAD_REQUEST)
 
-
 # For retrieving and updating user profiles
 class UserProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = UserCreateSerializer
-    queryset = User.objects.all()
     permission_classes = [IsAuthenticated]
     lookup_field = 'pk'
 
@@ -47,7 +50,6 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
         return self.request.user  # This ensures that only the logged-in user can view/update their profile
 
 
-# delete user account
 class UserDeleteView(generics.DestroyAPIView):
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated]  # Ensure the user is authenticated
@@ -60,7 +62,7 @@ class UserDeleteView(generics.DestroyAPIView):
         # Optionally, add a check if the user is deleting their own account
         user = self.get_object()
         user.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)  # Return a 204 No Content response on successful deletion
+        return Response(status=status.HTTP_204_NO_CONTENT)  # No content, successful deletion
   
 
 """

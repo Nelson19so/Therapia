@@ -179,9 +179,9 @@ DEFAULT_FROM_EMAIL = 'your-email@gmail.com'  # Default sender email
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static/'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static/'
+# ]
 
 # Always define STATIC_ROOT for production deployment
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
