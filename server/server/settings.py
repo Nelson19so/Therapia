@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-   'django.contrib.auth.middleware.AuthenticationMiddleware',  # Must come before AccountMiddleware for allAuth
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # Must come before AccountMiddleware for allAuth
     'allauth.account.middleware.AccountMiddleware',  # allAuth middleware 
     'django.contrib.messages.middleware.MessageMiddleware',
     "corsheaders.middleware.CorsMiddleware", # cors headers middleware
