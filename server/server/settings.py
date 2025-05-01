@@ -114,25 +114,25 @@ CORS_ALLOW_HEADERS = (
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # posgresSQL
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),         # Replace with your DB name
-        'USER': os.getenv('DB_USER'),        # Replace with your DB username
-        'PASSWORD': os.getenv('DB_PASSWORD'),    # Replace with your DB password
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),                 # Default PostgreSQL port
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('DB_NAME'),         # Replace with your DB name
+#         'USER': os.getenv('DB_USER'),        # Replace with your DB username
+#         'PASSWORD': os.getenv('DB_PASSWORD'),    # Replace with your DB password
+#         'HOST': os.getenv('DB_HOST'),
+#         'PORT': os.getenv('DB_PORT'),                 # Default PostgreSQL port
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
