@@ -201,7 +201,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Site ID is required for allauth
 SITE_ID = 1
 
-AUTH_USER_MODEL = 'authentication.CustomUser'
+AUTH_USER_MODEL = 'apps.authentication.CustomUser'
 
 # Add REST Framework settings
 REST_FRAMEWORK = {
