@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # cors headers configuration
 
 CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
+    "https://therapia-xc1z.onrender.com",
 ]
 
 CORS_ALLOW_METHODS = (
