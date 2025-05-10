@@ -1,0 +1,43 @@
+Folder PATH listing
+Volume serial number is FE27-9875
+C:.
+|   README.md
+|   structure.txt
+|   
+\---client
+    |   .gitignore
+    |   eslint.config.js
+    |   index.html
+    |   package-lock.json
+    |   package.json
+    |   vite.config.js
+    |   
+    +---public
+    |   |   vite.svg
+    |   |   
+    |   \---images
+    |           hero-image-landing-page.webp
+    |           
+    \---src
+        |   main.jsx
+        |   
+        +---assets
+        |   |   react.svg
+        |   |   
+        |   \---styles
+        |           main.css
+        |           
+        +---components
+        |       FeatureCard.jsx
+        |       Footer.jsx
+        |       Header.jsx
+        |       ProcessCard.jsx
+        |       TestimonialCard.jsx
+        |       
+        +---layouts
+        |       HeaderAndFooter.jsx
+        |       
+        \---pages
+                Landing.jsx
+                ScheduleSession.jsx
+                

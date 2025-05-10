@@ -1,0 +1,25 @@
+@media only screen and (max-width: 1439.8px) {
+  #signup-page .circle-svg {
+    display: none;
+  }
+  #signup-page .layout-grid-container {
+    padding-left: 28px;
+    grid-template-columns: 50% 50%;
+  }
+  #signup-page .grid-form-column {
+    padding-left: 0;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 1279.8px) {
+  #signup-page .layout-grid-container {
+    padding-left: 20px;
+  }
+}
+@media only screen and (max-width: 1023.8px) {
+  #signup-page .layout-grid-container {
+    grid-template-columns: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
