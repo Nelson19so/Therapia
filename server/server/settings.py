@@ -88,9 +88,7 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 # cors headers configuration
 
-CORS_ALLOWED_ORIGINS = {
-    "*"
-}
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_METHODS = (
     "DELETE",
