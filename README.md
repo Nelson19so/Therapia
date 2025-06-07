@@ -1,4 +1,4 @@
-# Project Title: Therapia - Mental Wellness Companion*
+# Therapia - Mental Wellness Companion*
 
 #Project Overview:*
 
