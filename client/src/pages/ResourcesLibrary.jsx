@@ -147,26 +147,26 @@ export default function ResourceLibrary() {
       <section className="h-[600px] relative flex justify-center pt-10 pb-10 ">
         <div className="w-[100%] h-[300px] rounded-[20px]  gap-5  mr-[20%] ml-[20%]  bg-[var(--primary)] flex justify-center items-center flex-col" >
           <div className="text-5xl ml-auto mr-auto text-center font-bold" >Elevate Your Mental Wellness<br /> with Therapia’s Resource<br /> Library</div>
-          <div className="text-1xl w-[100%] tracking-tight text-gray-900" >Explore invaluable resources tailored for your journey, organized in a soothing grid layout that ensures you find the support you need at your fingertips.</div>
+          <div className="text-xl  mr-auto ml-auto tracking-tight text-gray-900" >Explore invaluable resources tailored for your journey, organized in a soothing grid layout that ensures you find the support you need at your fingertips.</div>
 
 
-          <div className="absolute bottom-[10%] z-[10] mt-6 grid mr-[25%] ml-[25%] gap-5 grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-             <div className="flex h-[1fr] bg-[var(----background-base)] justify-center shadow-2xl px-5 py -10 gap-5 rounded-10 flex-col   items-center">
+          <div className="absolute bottom-[10%] z-[10]  mt-6 grid mr-[25%] ml-[25%] gap-5 grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+             <div className="flex flex-col  h-[1fr] bg-[var(--background-base)] justify-center  shadow-2xl px-[20px] py-[15px] gap-5 rounded-[20px] flex-col   items-center">
               <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">1</div>
-              <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Navigate  <br /> Seamlessly</div>
-              <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Utilize our powerful search functionality <br />and intuitive topic tags to quickly locate<br /> resources that align with your mental<br /> health interests.</div>
+              <div className="text-3xl text-center mr-auto  ml-auto font-bold">Navigate  <br /> Seamlessly</div>
+              <div className="text-1xl text-center mr-auto  ml-auto ">Utilize our powerful search functionality <br />and intuitive topic tags to quickly locate<br /> resources that align with your mental<br /> health interests.</div>
             </div>
-            <div className="flex  h-[1fr] bg-[var(----background-base)] justify-center shadow-2xl gap-5 rounded-10 flex-col   items-center">
+            <div className="flex  flex-col  h-[1fr] bg-[var(--background-base)] justify-center  shadow-2xl px-[20px] py-[15px] gap-5 rounded-[20px] flex-col   items-center">
               <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">2</div>
-              <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Refine Your  <br /> Exploration</div>
-              <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">
+              <div className="text-3xl text-center mr-auto  ml-auto font-bold">Refine Your  <br /> Exploration</div>
+              <div className="text-1xl text-center mr-auto  ml-auto ">
                 Dive deeper into topics that resonate<br /> with your experiences using our<br /> sophisticated filter sidebar, making your<br /> resource exploration more relevant and<br /> meaningful.
               </div>
             </div>
-            <div className="flex h-[1fr] bg-[var(----background-base)] justify-center shadow-2xl gap-5 rounded-10 flex-col   items-center">
+            <div className="flex flex-col  h-[1fr] bg-[var(--background-base)] justify-center  shadow-2xl px-[20px] py-[15px] gap-5 rounded-[20px] flex-col   items-center">
               <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">3</div>
-              <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Stay  <br /> Inspired</div>
-              <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">
+              <div className="text-3xl text-center mr-auto  ml-auto font-bold">Stay  <br /> Inspired</div>
+              <div className="text-1xl text-center mr-auto  ml-auto ">
                 Access a suggested content section<br /> that continuously introduces fresh <br />perspectives and resources to enhance<br /> your understanding of mental wellness.
               </div>
             </div>
