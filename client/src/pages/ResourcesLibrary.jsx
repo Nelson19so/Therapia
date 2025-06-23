@@ -1,7 +1,7 @@
 export default function ResourceLibrary() {
 
   return (
-    <section className="relative  flex flex-col h-full ">
+    <section className="relative  flex flex-col h-full pb-20 ">
       <section className="h-[50%] gap-20 flex justify-center pt-10 pb-10" >
         {/* text page */}
         <div className=" max-w-2xl px-4 gap-10 pt-10 pb-16 flex justify-center ">
@@ -35,23 +35,23 @@ export default function ResourceLibrary() {
           </div>
 
           <div className="mt-6 grid mr-[5%] ml-[5%] gap-5 grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">1</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">1</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Explore Tailored <br /> Resources</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Navigate a diverse collection of mental<br /> health materials carefully selected to<br /> meet your needs.</div>
             </div>
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">2</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">2</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Utilize Advanced <br /> Search</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Quickly find articles and guides that <br /> resonate with your unique journey using<br /> our intuitive search function.</div>
             </div>
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">3</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">3</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Tailor Your <br /> Exploration</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Use our filter sidebar to refine your<br /> search based on specific interests,<br /> making discovery effortless.</div>
             </div>
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">4</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">4</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Save Your Favorites</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Easily save and retrieve essential<br /> resources that make a significant<br /> impact on your well-being.</div>
             </div>
@@ -144,61 +144,61 @@ export default function ResourceLibrary() {
           <img src="/images/helping client brain.png" className="h-[100%] rounded-xl" alt="" />
         </div>
       </section>
-      <section className="h-[600px] relative flex justify-center pt-10 pb-10 ">
+      <section className="h-[650px] relative flex justify-center pt-10 pb-10 ">
         <div className="w-[100%] h-[300px] rounded-[20px]  gap-5  mr-[20%] ml-[20%]  bg-[var(--primary)] flex justify-center items-center flex-col" >
           <div className="text-5xl ml-auto mr-auto text-center font-bold" >Elevate Your Mental Wellness<br /> with Therapia’s Resource<br /> Library</div>
           <div className="text-xl  mr-auto ml-auto tracking-tight text-gray-900" >Explore invaluable resources tailored for your journey, organized in a soothing grid layout that ensures you find the support you need at your fingertips.</div>
 
 
-          <div className="absolute bottom-[10%] z-[10]  mt-6 grid mr-[25%] ml-[25%] gap-5 grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-             <div className="flex flex-col  h-[1fr] bg-[var(--background-base)] justify-center  shadow-2xl px-[20px] py-[15px] gap-5 rounded-[20px] flex-col   items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">1</div>
+          <div className="absolute bottom-[5%] z-[10]  mt-6 grid mr-auto ml-auto gap-5 grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+            <div className="flex flex-col  h-[1fr] bg-[var(--background-base)] justify-center  shadow-2xl px-[20px] py-[15px] gap-5 rounded-[20px] flex-col   items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center w-17 rounded-full p-5 text-2xl p-auto  font-bold">1</div>
               <div className="text-3xl text-center mr-auto  ml-auto font-bold">Navigate  <br /> Seamlessly</div>
               <div className="text-1xl text-center mr-auto  ml-auto ">Utilize our powerful search functionality <br />and intuitive topic tags to quickly locate<br /> resources that align with your mental<br /> health interests.</div>
             </div>
             <div className="flex  flex-col  h-[1fr] bg-[var(--background-base)] justify-center  shadow-2xl px-[20px] py-[15px] gap-5 rounded-[20px] flex-col   items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">2</div>
+              <div className="bg-[var(--primary)] flex justify-center items-center w-17 rounded-full p-5 text-2xl p-auto  font-bold">2</div>
               <div className="text-3xl text-center mr-auto  ml-auto font-bold">Refine Your  <br /> Exploration</div>
               <div className="text-1xl text-center mr-auto  ml-auto ">
                 Dive deeper into topics that resonate<br /> with your experiences using our<br /> sophisticated filter sidebar, making your<br /> resource exploration more relevant and<br /> meaningful.
               </div>
             </div>
             <div className="flex flex-col  h-[1fr] bg-[var(--background-base)] justify-center  shadow-2xl px-[20px] py-[15px] gap-5 rounded-[20px] flex-col   items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">3</div>
+              <div className="bg-[var(--primary)] flex justify-center items-center w-17 rounded-full p-5 text-2xl p-auto  font-bold">3</div>
               <div className="text-3xl text-center mr-auto  ml-auto font-bold">Stay  <br /> Inspired</div>
               <div className="text-1xl text-center mr-auto  ml-auto ">
                 Access a suggested content section<br /> that continuously introduces fresh <br />perspectives and resources to enhance<br /> your understanding of mental wellness.
               </div>
             </div>
-            
+
           </div>
         </div>
       </section>
       <section className="h-[500px] pt-10 pb-10 ">
-        <div className="mx-auto flex justify-center gap-10 flex-col ">
+        <div className="mx-auto flex  justify-center gap-10 flex-col ">
           <div className="flex flex-col gap-1">
             <h2 className="text-3xl mr-auto ml-auto font-bold tracking-tight text-gray-900">Discover Therapia’s Resource Library</h2>
-            <h3 className="text-2xl mr-auto ml-auto  tracking-tight text-gray-900">Empower your mental wellness journey with expertly curated resources</h3>
+            <h3 className="text-2xl mr-auto ml-auto  mt-10 tracking-tight text-gray-900">Empower your mental wellness journey with expertly curated resources</h3>
           </div>
 
           <div className="mt-6 grid mr-[5%] ml-[5%] gap-5 grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">1</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">1</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Explore Tailored <br /> Resources</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Navigate a diverse collection of mental<br /> health materials carefully selected to<br /> meet your needs.</div>
             </div>
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">2</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">2</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Utilize Advanced <br /> Search</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Quickly find articles and guides that <br /> resonate with your unique journey using<br /> our intuitive search function.</div>
             </div>
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">3</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">3</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Tailor Your <br /> Exploration</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Use our filter sidebar to refine your<br /> search based on specific interests,<br /> making discovery effortless.</div>
             </div>
-            <div className="flex justify-center shadow-2xl gap-5 rounded-10 flex-col  h-90 items-center">
-              <div className="bg-[var(--primary)] flex justify-center items-center  w-[50px] rounded-full p-5 text-2xl p-auto  font-bold">4</div>
+            <div className="flex justify-center shadow-2xl gap-5 rounded-2xl flex-col  h-90 items-center">
+              <div className="bg-[var(--primary)] flex justify-center items-center  w-17 rounded-full p-5 text-2xl p-auto  font-bold">4</div>
               <div className="text-2xl text-center mr-auto pl-20 pr-20 ml-auto font-bold">Save Your Favorites</div>
               <div className="text-xl text-center mr-auto pl-20 pr-20 ml-auto ">Easily save and retrieve essential<br /> resources that make a significant<br /> impact on your well-being.</div>
             </div>
