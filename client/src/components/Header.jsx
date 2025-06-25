@@ -28,7 +28,11 @@ export default function Header() {
       <header className="flex justify-center fixed w-full top-[0px] z-1 bg-linear-to-b from-[var(--semi-nav-90)] to-[var(--semi-nav-80)] backdrop-blur-2xl">
         <div className="relative max-w-[1440px] w-full flex justify-center xl:pr-[101px] pr-[0px]">
           <div className="w-full xl:max-w-[1238px] lg:max-w-[994px] md:max-w-[768px] max-w-[640px] xl:pl-[114px] lg:pl-[25px] md:pl-[43px] pl-[19px] lg:pr-[10px] md:pr-[30px] sm:pr-[15px] pr-[20px] py-[15px] flex items-center justify-between min-h-[60px]">
-            <Link to="/" className="z-2 cursor-pointer" onClick={() => setdropDown(true)}>
+            <Link
+              to="/"
+              className="z-2 cursor-pointer"
+              onClick={() => setdropDown(true)}
+            >
               {/* <a href="/" className="z-2"> */}
               <span className="text-[13px]/[1.0] text-[var(--text-dark)] font-bold">
                 Therapia
@@ -37,8 +41,24 @@ export default function Header() {
             </Link>
             <nav className="md:block hidden">
               <ul className="flex gap-x-[50px] text-[13px]/[1.0] text-[var(--text-dark)] font-semibold">
-              <Link to="/about"> <li className="cursor-pointer">About us</li> </Link> 
-              <Link to="/feature"> <li className="cursor-pointer">Features</li> </Link> 
+                <Link to="/about">
+                  {" "}
+                  <li
+                    className="cursor-pointer"
+                    onClick={() => setdropDown(true)}
+                  >
+                    About us
+                  </li>{" "}
+                </Link>
+                <Link to="/feature">
+                  {" "}
+                  <li
+                    className="cursor-pointer"
+                    onClick={() => setdropDown(true)}
+                  >
+                    Features
+                  </li>{" "}
+                </Link>
                 {/* <Link to="/schedule-session"> */}
                 <li
                   className=" relative cursor-pointer"
@@ -61,36 +81,36 @@ export default function Header() {
                       />
                     </svg>
                   </div>
-                  { !dropDown && (
+                  {!dropDown && (
                     <div>
-                      <div className="absolute  z-10 mt-2 w-40 origin-top-right   bg-white shadow-2xl">
-                          <div>
-                            <ul>
-                                <li>
-                                        <Link
-                            to="/schedule-session"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            Schedule Session
-                          </Link>
-                                </li>
-                                <li>
-                                        <Link
-                            to="/resource-library"
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                          >
-                            Resource Library 
-                          </Link>
-                                </li>
-
-                            </ul>
-                           
-                          </div>
-                         
-                        
+                      <div
+                        className={`absolute  z-10 mt-2 w-40 origin-top-right 
+                        transition-all duration-300 ease-in-out transform  
+                        bg-white shadow-2xl`}
+                      >
+                        <div>
+                          <ul>
+                            <li>
+                              <Link
+                                to="/schedule-session"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              >
+                                Schedule Session
+                              </Link>
+                            </li>
+                            <li>
+                              <Link
+                                to="/resource-library"
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              >
+                                Resource Library
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
-                    </div>)
-                  }
+                    </div>
+                  )}
                 </li>
                 {/* </Link> */}
               </ul>
