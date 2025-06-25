@@ -32,7 +32,7 @@ export default function Header() {
             <nav className="md:block hidden">
               <ul className="flex gap-x-[50px] text-[13px]/[1.0] text-[var(--text-dark)] font-semibold">
                 <li>About us</li>
-                <li>Features</li>
+                <a href="/resources-library-page" >  Features</a>
                 <a href="/schedule-session">
                   <li className="flex gap-x-[8px] items-center">
                     Services{" "}
