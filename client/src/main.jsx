@@ -7,8 +7,13 @@ import ScheduleSession from "./pages/ScheduleSession.jsx";
 import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
 import Header from "./components/Header.jsx";
+
 import Footer from "./components/Footer.jsx";
 import NotFound from "./pages/NotFound.jsx";
+
+import ResourceLibrary from "./pages/ResourcesLibrary.jsx";
+import OnlyHeader from "./layouts/OnlyHeader.jsx";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -27,9 +32,20 @@ export default function App() {
     <Header />
       <Routes>
         {/* Layout Routes with Header and Footer */}
+
         <Route index element={<Landing />} />
          <Route path="schedule-session" element={<ScheduleSession />} />
           <Route path="*" element={<NotFound />} />
+
+        <Route element={<HeaderAndFooter />}>
+          <Route index element={<Landing />} />
+          <Route path="schedule-session" element={<ScheduleSession />} />
+        </Route>
+        <Route element={<OnlyHeader />} >
+          <Route element={<Header />} />
+          <Route path="resources-library-page" element={<ResourceLibrary />} />
+        </Route>
+
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
       </Routes>
