@@ -1,30 +1,26 @@
-# Therapia
+# Therapia - Mental Wellness Companion*
+
+## Project Overview:*
 
 Therapia is a mobile, desktop, tablet therapy webapp designed to provide accessible, convenient, and personalized mental health support. Our mission is to bridge the gap between individuals and mental health professionals, fostering a supportive community that promotes emotional well-being.
 
-## to generate folder structure to look at
+## Key Features:*
 
-```bash
-- tree /F /A > structure.txt
-```
+1. *Virtual Therapy Sessions*: Secure, HIPAA-compliant video sessions with licensed therapists.
+2. *Mood Tracking*: Personalized emotional tracking and insights to monitor progress.
+3. *Customized Coping Tools*: AI-driven recommendations for stress management, mindfulness, and relaxation techniques.
+4. *Community Forum*: Anonymous support groups and discussion boards moderated by mental health experts.
+5. *Resource Library*: Access to educational content, articles, and videos on mental health topics.
 
-## to create new app inside the app folder
+## Goals and Objectives:*
 
-- cd server/apps
-- django-admin startapp < your-app-name >
-- <strong> modify the apps.py file in the < your-app-name > folder <strong>
-- eg: inside apps.py add "apps.< your-app-name >" to the newly installed
+1. Provide easy access to mental health resources and support.
+2. Foster a supportive community that encourages open discussion and connection.
+3. Offer personalized tools and strategies for managing mental well-being.
+4. Promote education and awareness about mental health topics.
 
-```bash
-class your-app-nameConfig(AppConfig):
-  default_auto_field = 'django.db.models.BigAutoField'
-  name = "apps.your-app-name "
-```
+## Target Audience:*
 
-- navigate to server, then settings.py and add to installed apps
-
-```bash
-- eg: INSTALLED_APPS = [
-  "apps.your-app-name"
-  ]
-```
+1. Individuals seeking mental health support and resources.
+2. Mental health professionals looking to expand their practice or offer additional support to clients.
+3. Organizations and businesses interested in promoting employee mental well-being.
