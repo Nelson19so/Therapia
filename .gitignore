@@ -1,0 +1,47 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.db
+*.sqlite3
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+__pycache__/
+db.sqlite3
+
+# Environment files
+.env
+.env.*
+*.env
+
+# Virtual environment
+venv/
+.env/
+*.egg-info/
+
+# MySQL
+*.err
+*.pid
+*.log
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Local IDE files
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
