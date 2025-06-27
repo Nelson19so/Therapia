@@ -6,7 +6,7 @@ export default function ScheduleSession() {
     <>
       <main>
         {/* Hero Section */}
-        <section className="flex justify-center">
+        <section className="flex justify-center ">
           <div className="relative max-w-[1700px] w-full flex justify-center">
             <div className="max-w-[1591px] w-full flex justify-center">
               <div className="w-full 2xl:max-w-[1394px] xl:max-w-[1280px] lg:max-w-[1024px] max-w-[768px] 2xl:pl-[0px] md:pl-[40px] sm:pl-[20px] pl-[19px] md:pr-[0px] sm:pr-[20px] pr-[19px] flex md:flex-row flex-col xl:pt-[34px] lg:pt-[49px] sm:pt-[30px] pt-[30px] pb-[29px] gap-x-[7px] gap-y-[50px] items-center">

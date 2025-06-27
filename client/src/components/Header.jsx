@@ -41,6 +41,7 @@ export default function Header() {
             </Link>
             <nav className="md:block hidden">
               <ul className="flex gap-x-[50px] text-[13px]/[1.0] text-[var(--text-dark)] font-semibold">
+<<<<<<< feature/Goodluck/Routing
                 <Link to="/about">
                   {" "}
                   <li
@@ -66,6 +67,13 @@ export default function Header() {
                 >
                   <div className="flex gap-x-[8px] items-center">
                     Services
+=======
+                <li>About us</li>
+                <a href="/resources-library-page" >  Features</a>
+                <a href="/schedule-session">
+                  <li className="flex gap-x-[8px] items-center">
+                    Services{" "}
+>>>>>>> main
                     <svg
                       width={10}
                       height={6}
