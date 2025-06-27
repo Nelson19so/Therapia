@@ -39,9 +39,10 @@ export default function Header() {
               </span>
               {/* </a> */}
             </Link>
+            </div>
             <nav className="md:block hidden">
               <ul className="flex gap-x-[50px] text-[13px]/[1.0] text-[var(--text-dark)] font-semibold">
-<<<<<<< feature/Goodluck/Routing
+
                 <Link to="/about">
                   {" "}
                   <li
@@ -67,13 +68,13 @@ export default function Header() {
                 >
                   <div className="flex gap-x-[8px] items-center">
                     Services
-=======
+
                 <li>About us</li>
                 <a href="/resources-library-page" >  Features</a>
                 <a href="/schedule-session">
                   <li className="flex gap-x-[8px] items-center">
                     Services{" "}
->>>>>>> main
+
                     <svg
                       width={10}
                       height={6}
@@ -88,6 +89,8 @@ export default function Header() {
                         fill="var(--secondary)"
                       />
                     </svg>
+                    </a>
+                    </nav>
                   </div>
                   {!dropDown && (
                     <div>
@@ -123,6 +126,7 @@ export default function Header() {
                 {/* </Link> */}
               </ul>
             </nav>
+           
             <div className="md:flex gap-x-[19px] hidden">
               <Link to="/signup">
                 <button className="rounded-[6px] bg-[var(--secondary)] text-[var(--text-light)] min-w-[121px] h-[30px] flex items-center justify-center text-[12px]/[18px] font-semibold cursor-pointer">
