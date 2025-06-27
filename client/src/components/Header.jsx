@@ -159,11 +159,11 @@ export default function Header() {
             >
               <div className="flex justify-center">
                 <ul className="flex flex-col gap-y-[50px] text-[13px]/[1.0] text-[var(--text-dark)] font-semibold pt-[86px] pb-[50px] h-[100vh] max-w-[640px] w-full px-[19px]">
-                  <li className="cursor-pointer">About us</li>
-                  <li className="cursor-pointer">Features</li>
-                  <a href="schedule-session">
-                    <li className="flex gap-x-[8px] items-center cursor-pointer">
-                      Services{" "}
+               <Link to="/about">  <li className="cursor-pointer" onClick={() => setOpenMobileMenu(false)}>About us</li> </Link> 
+               <Link to="/feature">     <li className="cursor-pointer" onClick={() => setOpenMobileMenu(false)}>Features</li> </Link> 
+                  <Link to="schedule-session">
+                    <li className="flex gap-x-[8px] items-center cursor-pointer" onClick={() => setOpenMobileMenu(false)}>
+                      Services
                       <svg
                         width={10}
                         height={6}
@@ -180,12 +180,12 @@ export default function Header() {
                         />
                       </svg>
                     </li>
-                  </a>
+                  </Link>
                   <Link to="/signup">
-                    <li>Create Account</li>
+                    <li className="cursor-pointer" onClick={() => setOpenMobileMenu(false)}>Create Account</li>
                   </Link>
                   <Link to="/login">
-                    <li>Login</li>
+                    <li className="cursor-pointer" onClick={() => setOpenMobileMenu(false)}>Login</li>
                   </Link>
                 </ul>
               </div>
