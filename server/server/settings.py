@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 
     # Custom apps
-    "apps.authentication"
+    "apps.accounts"
 ]
 
 MIDDLEWARE = [
@@ -201,7 +201,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Site ID is required for allauth
 SITE_ID = 1
 
-AUTH_USER_MODEL = 'authentication.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Add REST Framework settings
 REST_FRAMEWORK = {
@@ -216,10 +216,9 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=25),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
-
 
 # For development, you might want to allow all origins
 CORS_ALLOW_ALL_ORIGINS = DEBUG # For production, this will be set to False which would mean DEBUG is set to False

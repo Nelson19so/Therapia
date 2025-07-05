@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model, authenticate
 from django.contrib.auth.password_validation import validate_password
 from .models import CustomUser, OTP
 from django.core.exceptions import ValidationError
-from rest_framework_simplejwt.tokens import RefreshToken
 
 User = get_user_model()
 
@@ -50,16 +49,8 @@ class UserCreateSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data.pop('confirm_password')  # Don't store confirm_password
         user = User.objects.create_user(**validated_data)
-        refresh = RefreshToken.for_user(user)
 
-        return {
-            'user': user,
-            'tokens': {
-                'access': str(refresh.access_token),
-                'refresh': str(refresh)
-            }
-        }
-
+        return {'user': user,}
 
 """
 user login serializer
@@ -75,12 +66,6 @@ class UserLogInSerialier(serializers.Serializer):
             raise serializers.ValidationError({
                 'non_field_errors': ["Invalid credentials"]
             })
-        
-        refresh = RefreshToken.for_user(user)
-        data['tokens'] = {
-            'access': str(refresh.access_token),
-            'refresh': str(refresh)
-        }
         
         data['user'] = user
         return data

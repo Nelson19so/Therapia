@@ -2,11 +2,13 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model, login, logout
 from rest_framework import status, generics
 from rest_framework.response import Response
-from .models import CustomUser, OTP
+from .models import OTP
 from .serializers import UserCreateSerializer, UserProfileSerializer, UserLogInSerialier, RequestOTPSerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.core.mail import send_mail
+from django.conf import settings
 
 User = get_user_model()
 
@@ -23,7 +25,7 @@ class UserSignUpListCreateApiView(APIView):
             user_data = serializer.save()  # Save the new user to the database
 
             user = user_data['user']  # Extract the user object
-            tokens = user_data['tokens']  # Extract the tokens
+            refresh = RefreshToken.for_user(user)
             
             return Response({
                 'success': True,
@@ -31,9 +33,11 @@ class UserSignUpListCreateApiView(APIView):
                     'email': user.email,
                     'first_name': user.first_name
                 },
-                'tokens': tokens
+                'tokens': {
+                    'access': str(refresh.access_token),
+                    'refresh': str(refresh)
+                }
             }, status=status.HTTP_201_CREATED)
-
 
         return Response({
           'success': False,
@@ -42,13 +46,12 @@ class UserSignUpListCreateApiView(APIView):
 
 # For retrieving and updating user profiles
 class UserProfileView(generics.RetrieveUpdateAPIView):
-    serializer_class = UserCreateSerializer
+    serializer_class = UserProfileSerializer
     permission_classes = [IsAuthenticated]
-    lookup_field = 'pk'
 
     def get_object(self):
-        return self.request.user  # This ensures that only the logged-in user can view/update their profile
-
+        user = self.request.user  # This ensures that only the logged-in user can view/update their profile
+        return Response({'user': user}, status=status.HTTP_200_OK)
 
 class UserDeleteView(generics.DestroyAPIView):
     queryset = User.objects.all()
@@ -63,7 +66,6 @@ class UserDeleteView(generics.DestroyAPIView):
         user = self.get_object()
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)  # No content, successful deletion
-  
 
 """
 Handle user login
@@ -78,20 +80,23 @@ class UserLoginListCreateApiView(generics.GenericAPIView):
         if serializer.is_valid():
             user = serializer.validated_data['user']
             login(request, user)
+            refresh = RefreshToken.for_user(user)
           
             return Response({
                 'success': True,
                 'user': {
                   'email': user.email,
                 },
-              'tokens': serializer.validated_data['tokens']
+              'token': {
+                    'access': str(refresh.access_token),
+                    'refresh': str(refresh)
+              }
             })
         
         return Response({
             'success': False,
             'errors': serializer.errors
         }, status=status.HTTP_400_BAD_REQUEST)
-
 
 class UserLogoutView(APIView):
     permission_classes = [IsAuthenticated]
@@ -103,8 +108,6 @@ class UserLogoutView(APIView):
             'message': 'Logout successful!'
         }, status=status.HTTP_200_OK)
 
-
-    
 """""
 request an OTP fr password reset
 """""
@@ -119,10 +122,14 @@ class RequestOTPView(generics.CreateAPIView):
             email = serializer.validated_data['email']
             user = User.objects.get(email=email)
 
-            OTP.objects.filter(user=user, is_verified=False).delete()
+            try:
+                OTP.objects.filter(user=user, is_verified=False).delete()
+            except OTP.DoesNotExist:
+                pass
 
             # Create OTP and associate it with the user
-            otp = OTP.objects.create(user=user)
+            if not user.usr_otp:
+                otp = OTP.objects.create(user=user, is_verified=True)
 
             # Send OTP to the user's email
             send_mail(

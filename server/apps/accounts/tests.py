@@ -1,7 +1,7 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
 from django.urls import reverse
-from apps.authentication.models import CustomUser
+from apps.accounts.models import CustomUser
 
 class UserSignUpTests(APITestCase):
     def test_user_can_signup_successfully(self):
