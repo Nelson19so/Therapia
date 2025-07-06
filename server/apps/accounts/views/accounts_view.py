@@ -1,13 +1,17 @@
-from django.shortcuts import render
+# user accounts view
+
 from django.contrib.auth import get_user_model, login, logout
-from rest_framework import status, generics
+from rest_framework      import status, generics
 from rest_framework.response import Response
-from .models import OTP
-from .serializers import UserCreateSerializer, UserProfileSerializer, UserLogInSerialier, RequestOTPSerializer
+from apps.accounts.models import OTP
+from apps.accounts.serializers import (
+    UserCreateSerializer, UserProfileSerializer, 
+    UserLogInSerialier, RequestOTPSerializer
+)
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.views import APIView
+from rest_framework.views       import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-from django.core.mail import send_mail
+from django.core.mail           import send_mail
 from django.conf import settings
 
 User = get_user_model()
@@ -88,8 +92,8 @@ class UserLoginListCreateApiView(generics.GenericAPIView):
                   'email': user.email,
                 },
               'token': {
-                    'access': str(refresh.access_token),
-                    'refresh': str(refresh)
+                'access': str(refresh.access_token),
+                'refresh': str(refresh)
               }
             })
         
@@ -104,6 +108,7 @@ class UserLogoutView(APIView):
     def post(self, request, *args, **kwargs):
         # Log the user out and clear the session
         logout(request)
+        
         return Response({
             'message': 'Logout successful!'
         }, status=status.HTTP_200_OK)
@@ -118,12 +123,15 @@ class RequestOTPView(generics.CreateAPIView):
     def create(self, request, *args, **kwargs):
         """Handle OTP request via email"""
         serializer = self.get_serializer(data=request.data)
+        
         if serializer.is_valid():
             email = serializer.validated_data['email']
             user = User.objects.get(email=email)
 
             try:
+
                 OTP.objects.filter(user=user, is_verified=False).delete()
+
             except OTP.DoesNotExist:
                 pass
 

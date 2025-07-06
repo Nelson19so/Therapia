@@ -6,10 +6,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/account/', include('apps.accounts.urls')),
+    path('api/account/',  include('apps.accounts.urls')),
     path('api/accounts/', include('apps.accounts.urls')),
     path('api/accounts/google/', include('allauth.urls')),
-    path('api/accounts/google/login/', LoginView.as_view(), name='google_login'),
+    path('api/accounts/google/login/',  LoginView.as_view(), name='google_login'),
     path('api/accounts/google/signup/', SignupView.as_view(), name='google_signup'),
 ]
 
