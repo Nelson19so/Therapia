@@ -9,5 +9,5 @@ pip install -r requirements.txt
 python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
-python manage.py migrate authentication
+python manage.py migrate accounts
 python manage.py migrate  --no-input

@@ -14,7 +14,9 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.core.mail           import send_mail
 from django.conf import settings
 
+
 User = get_user_model()
+
 
 class UserSignUpListCreateApiView(APIView):
     permission_classes = [AllowAny]  # Allow anyone to access this view (for signup)
@@ -48,6 +50,7 @@ class UserSignUpListCreateApiView(APIView):
           'error': serializer.errors
         }, status=status.HTTP_400_BAD_REQUEST)
 
+
 # For retrieving and updating user profiles
 class UserProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = UserProfileSerializer
@@ -56,6 +59,7 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
     def get_object(self):
         user = self.request.user  # This ensures that only the logged-in user can view/update their profile
         return Response({'user': user}, status=status.HTTP_200_OK)
+
 
 class UserDeleteView(generics.DestroyAPIView):
     queryset = User.objects.all()
@@ -70,6 +74,7 @@ class UserDeleteView(generics.DestroyAPIView):
         user = self.get_object()
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)  # No content, successful deletion
+        
 
 """
 Handle user login
@@ -113,6 +118,7 @@ class UserLogoutView(APIView):
             'message': 'Logout successful!'
         }, status=status.HTTP_200_OK)
 
+
 """""
 request an OTP fr password reset
 """""
@@ -123,7 +129,7 @@ class RequestOTPView(generics.CreateAPIView):
     def create(self, request, *args, **kwargs):
         """Handle OTP request via email"""
         serializer = self.get_serializer(data=request.data)
-        
+
         if serializer.is_valid():
             email = serializer.validated_data['email']
             user = User.objects.get(email=email)

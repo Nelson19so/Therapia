@@ -2,6 +2,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 from datetime import timedelta
+from apps.config import APPS
 
 load_dotenv()
 
@@ -13,16 +14,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-mlf-p#2ijrql))ilf2p25^3cq_+@+)z0-n=q*+z8w1ns)%g)4r'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-# allowed host
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'therapia-ln4x.onrender.com',
-]
 
 # Application definition
 
@@ -47,10 +38,10 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',# REST API registration using allauth
     'corsheaders',              # CORS handling
     'rest_framework_simplejwt',
-
-    # Custom apps
-    "apps.accounts"
 ]
+
+# installed apps config
+INSTALLED_APPS += [app['name'] for app in APPS]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Must be at the top
@@ -108,29 +99,14 @@ CORS_ALLOW_HEADERS = (
     "x-requested-with",
 )
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# posgresSQL
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.getenv('DB_NAME'),         # Replace with your DB name
-#         'USER': os.getenv('DB_USER'),        # Replace with your DB username
-#         'PASSWORD': os.getenv('DB_PASSWORD'),    # Replace with your DB password
-#         'HOST': os.getenv('DB_HOST'),
-#         'PORT': os.getenv('DB_PORT'),                 # Default PostgreSQL port
-#     }
-# }
+# Email settings (example for using Gmail's SMTP server)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@gmail.com' 
+EMAIL_HOST_PASSWORD = 'your-email-password' 
+DEFAULT_FROM_EMAIL = 'your-email@gmail.com'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -162,31 +138,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Email settings (example for using Gmail's SMTP server)
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your-email@gmail.com'  # Replace with your email
-EMAIL_HOST_PASSWORD = 'your-email-password'  # Replace with your email password
-DEFAULT_FROM_EMAIL = 'your-email@gmail.com'  # Default sender email
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static/'
-# ]
-
 # Always define STATIC_ROOT for production deployment
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-
-# This only applies in production mode (DEBUG=False)
-if not DEBUG:
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 EMAIL_FILE_PATH = '/tmp/django-emails'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -218,5 +177,4 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
-# For development, you might want to allow all origins
-CORS_ALLOW_ALL_ORIGINS = DEBUG # For production, this will be set to False which would mean DEBUG is set to False
+
