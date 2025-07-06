@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from apps.accounts.models import OTP
 from apps.accounts.serializers import (
     UserCreateSerializer, UserProfileSerializer, 
-    UserLogInSerialier, RequestOTPSerializer
+    UserLogInSerializer, RequestOTPSerializer
 )
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views       import APIView
@@ -80,7 +80,7 @@ class UserDeleteView(generics.DestroyAPIView):
 Handle user login
 """
 class UserLoginListCreateApiView(generics.GenericAPIView):
-    serializer_class = UserLogInSerialier
+    serializer_class = UserLogInSerializer
     permission_classes = [AllowAny]
   
     def post(self, request, *args, **kwargs):

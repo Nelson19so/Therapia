@@ -55,7 +55,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
 """
 user login serializer
 """
-class UserLogInSerialier(serializers.Serializer):
+class UserLogInSerializer(serializers.Serializer):
     email = serializers.EmailField()
     password = serializers.CharField()
 
