@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound.jsx";
 
 import ResourceLibrary from "./pages/ResourcesLibrary.jsx";
 import OnlyHeader from "./layouts/OnlyHeader.jsx";
+import CoopingTools from "./pages/CoopingTools.jsx";
 
 
 createRoot(document.getElementById("root")).render(
@@ -35,11 +36,12 @@ export default function App() {
 
         <Route index element={<Landing />} />
          <Route path="schedule-session" element={<ScheduleSession />} />
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
 
         <Route element={<HeaderAndFooter />}>
           <Route index element={<Landing />} />
           <Route path="schedule-session" element={<ScheduleSession />} />
+          <Route path="cooping-tools" element={<CoopingTools />} />
         </Route>
         <Route element={<OnlyHeader />} >
           <Route element={<Header />} />
