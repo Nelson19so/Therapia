@@ -67,14 +67,16 @@ class UserDeleteView(generics.DestroyAPIView):
     permission_classes = [IsAuthenticated]  # Ensure the user is authenticated
     
     def get_object(self):
-        # We can restrict deletion to the currently authenticated user
-        return self.request.user  # This ensures only the logged-in user can delete their own account
+        # This ensures only the logged-in user can delete their own account
+        return self.request.user 
 
     def delete(self, request, *args, **kwargs):
         # Optionally, add a check if the user is deleting their own account
         user = self.get_object()
         user.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)  # No content, successful deletion
+
+        # No content, successful deletion
+        return Response(status=status.HTTP_204_NO_CONTENT)  
         
 
 """
@@ -95,7 +97,7 @@ class UserLoginListCreateApiView(generics.GenericAPIView):
             return Response({
                 'success': True,
                 'user': {
-                  'email': user.email,
+                    'email': user.email,
                 },
                 'token': {
                     'access': str(refresh.access_token),
@@ -114,9 +116,11 @@ class UserLogoutView(APIView):
     def post(self, request, *args, **kwargs):
         try:
 
-            # Log the user out and clear the session
+            # getting the refresh token from user
             refresh_token = request.data.get('refresh')
+            # checks for the token, if it's valid
             token = RefreshToken(refresh_token)
+            # Log the user out and clear the session
             token.blacklist()
             
             return Response({
