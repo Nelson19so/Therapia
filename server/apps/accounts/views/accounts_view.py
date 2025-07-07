@@ -96,10 +96,10 @@ class UserLoginListCreateApiView(generics.GenericAPIView):
                 'user': {
                   'email': user.email,
                 },
-              'token': {
-                'access': str(refresh.access_token),
-                'refresh': str(refresh)
-              }
+                'token': {
+                    'access': str(refresh.access_token),
+                    'refresh': str(refresh)
+                }
             })
         
         return Response({

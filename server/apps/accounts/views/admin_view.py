@@ -11,7 +11,7 @@ WARNING: this view should be handled carefully to avoid exploiting/exposing harm
 from rest_framework import status, generics
 from rest_framework.permissions import IsAdminUser
 from rest_framework.views       import APIView, Response
-from apps.accounts.serializers  import UserProfileSerializer
+from apps.accounts.serializers  import UserProfileSerializer, UserCreateSerializer
 from django.contrib.auth import get_user_model
 
 
@@ -20,9 +20,9 @@ User = get_user_model()
 
 
 # this class base view system (CBVs) list and create api view for use via admin dashboard
-class ListAllUsers(generics.ListCreateAPIView):
+class ListCreateUserApiView(generics.ListCreateAPIView):
     permission_classes = [IsAdminUser]
-    serializer_class = UserProfileSerializer
+    serializer_class = UserCreateSerializer
     queryset = User.objects.all() # listing users
 
     # handling post request from the admin to create new user
@@ -46,10 +46,11 @@ class DeleteUserApiView(APIView):
     def delete(self, request):
         user_ids = request.data.get('user_ids')
 
+        # checks if theres any id passed before proceeding
         if user_ids:
             try:
 
-                user = generics.get_object_or_404(User, id__in=user_ids)
+                user = User.objects.filter(id__in=user_ids)
                 user.delete()
 
             except User.DoesNotExist:
@@ -70,7 +71,7 @@ class UpdateApiViewsForUsers(generics.UpdateAPIView):
     serializer_class = UserProfileSerializer
     permission_classes = [IsAdminUser]
     lookup_field = 'user_id'
-    
+
     def get_queryset(self, user_id):
         return generics.get_object_or_404(User, id=user_id)
     
@@ -85,8 +86,8 @@ class UpdateApiViewsForUsers(generics.UpdateAPIView):
         return Response({
             "success": True,
             "message": "Update successful"
-        }, status=status.HTTP_200_OK)
-    
+        }, serializer.data, status=status.HTTP_200_OK)
+
 
 # admin user status count api class base view (CBVs)
 class AdminUserStatusCount(APIView):
@@ -103,7 +104,7 @@ class AdminUserStatusCount(APIView):
             return Response({
                 'success': True, 
                 'users_count': users_count
-            },status=status.HTTP_200_OK)
+            }, status=status.HTTP_200_OK)
         
         except User.DoesNotExist:
             return Response({
