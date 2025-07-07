@@ -13,6 +13,7 @@ from rest_framework.views       import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.core.mail           import send_mail
 from django.conf import settings
+from rest_framework_simplejwt.exceptions import TokenError
 
 
 User = get_user_model()
@@ -111,12 +112,29 @@ class UserLogoutView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        # Log the user out and clear the session
-        logout(request)
-        
-        return Response({
-            'message': 'Logout successful!'
-        }, status=status.HTTP_200_OK)
+        try:
+
+            # Log the user out and clear the session
+            refresh_token = request.data.get('refresh')
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            
+            return Response({
+                'success': True,
+                'message': 'Logout successful!',
+            }, status=status.HTTP_200_OK)
+
+        except TokenError:
+            return Response({
+                'success': False,
+                'message': 'Logout successful!'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        except KeyError:
+            return Response({
+                'success': False,
+                'message': 'Refresh token is required'
+            }, status=status.HTTP_400_BAD_REQUEST)
 
 
 """""
