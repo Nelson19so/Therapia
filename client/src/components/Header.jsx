@@ -92,7 +92,7 @@ const handleDropDown = () => {
                             </li>
                             <li>
                               <Link
-                                to="/resource-library"
+                                to="/resources-library-page"
                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                 onClick={closeDropDown}
                               >

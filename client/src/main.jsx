@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HeaderAndFooter from "./layouts/HeaderAndFooter.jsx";
 import Landing from "./pages/Landing.jsx";
 import ScheduleSession from "./pages/ScheduleSession.jsx";
 import Signup from "./pages/Signup.jsx";
@@ -12,7 +11,6 @@ import Footer from "./components/Footer.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 import ResourceLibrary from "./pages/ResourcesLibrary.jsx";
-import OnlyHeader from "./layouts/OnlyHeader.jsx";
 import CoopingTools from "./pages/CoopingTools.jsx";
 
 
@@ -30,30 +28,24 @@ createRoot(document.getElementById("root")).render(
 export default function App() {
   return (
     <>
-    <Header />
+      <Header />
       <Routes>
         {/* Layout Routes with Header and Footer */}
 
         <Route index element={<Landing />} />
-         <Route path="schedule-session" element={<ScheduleSession />} />
-          {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="schedule-session" element={<ScheduleSession />} />
+        <Route path="*" element={<NotFound />} />
+        
+        <Route path="resources-library-page" element={<ResourceLibrary />} />
 
-        <Route element={<HeaderAndFooter />}>
-          <Route index element={<Landing />} />
-          <Route path="schedule-session" element={<ScheduleSession />} />
-          <Route path="cooping-tools" element={<CoopingTools />} />
-        </Route>
-        <Route element={<OnlyHeader />} >
-          <Route element={<Header />} />
-          <Route path="resources-library-page" element={<ResourceLibrary />} />
-        </Route>
+        /**rout path is manual called 'coping tools page'  */
+        <Route path="coping-tools" element={<CoopingTools />} />
 
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
       </Routes>
       <Footer />
-      
+
     </>
   )
 }
-
